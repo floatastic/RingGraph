@@ -1,8 +1,8 @@
 #Ring Graph
 
-Ring Graph is an open source version of ring graph seen on Apple Watch. Current version is still very much a Work In Progress. It still lacks icons inside grsph as well as colors, sizes and animations need fine tuning.
+Ring Graph is an open source version of ring graph seen on Apple Watch. Current version is still very much a Work In Progress. It still lacks icons inside graph as well as colors, sizes and animations need fine tuning.
 
-[Ring Graph in action](assets/RingGraphAnimation.gif)
+![Ring Graph in action](assets/RingGraphAnimation.gif)
 
 ###Still long TODO list before 1.0.0
 - [ ] Add animated icons
