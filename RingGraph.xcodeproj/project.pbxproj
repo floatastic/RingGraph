@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F7F42E41ADC70E800B39F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */; };
+		2F7F42E61ADC70E800B39F2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F42E51ADC70E800B39F2E /* ViewController.swift */; };
+		2F7F42E91ADC70E800B39F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42E71ADC70E800B39F2E /* Main.storyboard */; };
+		2F7F42EB1ADC70E800B39F2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42EA1ADC70E800B39F2E /* Images.xcassets */; };
+		2F7F42EE1ADC70E800B39F2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */; };
+		2F7F42FA1ADC70E800B39F2E /* RingGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F7F42F41ADC70E800B39F2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F7F42D61ADC70E800B39F2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F7F42DD1ADC70E800B39F2E;
+			remoteInfo = RingGraph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F7F42DE1ADC70E800B39F2E /* RingGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7F42E21ADC70E800B39F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2F7F42E51ADC70E800B39F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F7F42E81ADC70E800B39F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F7F42EA1ADC70E800B39F2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F7F42ED1ADC70E800B39F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2F7F42F31ADC70E800B39F2E /* RingGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RingGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7F42F81ADC70E800B39F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingGraphTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F7F42DB1ADC70E800B39F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F7F42F01ADC70E800B39F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F7F42D51ADC70E800B39F2E = {
+			isa = PBXGroup;
+			children = (
+				2F7F42E01ADC70E800B39F2E /* RingGraph */,
+				2F7F42F61ADC70E800B39F2E /* RingGraphTests */,
+				2F7F42DF1ADC70E800B39F2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F7F42DF1ADC70E800B39F2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F42DE1ADC70E800B39F2E /* RingGraph.app */,
+				2F7F42F31ADC70E800B39F2E /* RingGraphTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F7F42E01ADC70E800B39F2E /* RingGraph */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */,
+				2F7F42E51ADC70E800B39F2E /* ViewController.swift */,
+				2F7F42E71ADC70E800B39F2E /* Main.storyboard */,
+				2F7F42EA1ADC70E800B39F2E /* Images.xcassets */,
+				2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */,
+				2F7F42E11ADC70E800B39F2E /* Supporting Files */,
+			);
+			path = RingGraph;
+			sourceTree = "<group>";
+		};
+		2F7F42E11ADC70E800B39F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F42E21ADC70E800B39F2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F7F42F61ADC70E800B39F2E /* RingGraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */,
+				2F7F42F71ADC70E800B39F2E /* Supporting Files */,
+			);
+			path = RingGraphTests;
+			sourceTree = "<group>";
+		};
+		2F7F42F71ADC70E800B39F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F42F81ADC70E800B39F2E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F7F42DD1ADC70E800B39F2E /* RingGraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F7F42FD1ADC70E800B39F2E /* Build configuration list for PBXNativeTarget "RingGraph" */;
+			buildPhases = (
+				2F7F42DA1ADC70E800B39F2E /* Sources */,
+				2F7F42DB1ADC70E800B39F2E /* Frameworks */,
+				2F7F42DC1ADC70E800B39F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RingGraph;
+			productName = RingGraph;
+			productReference = 2F7F42DE1ADC70E800B39F2E /* RingGraph.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F7F42F21ADC70E800B39F2E /* RingGraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F7F43001ADC70E800B39F2E /* Build configuration list for PBXNativeTarget "RingGraphTests" */;
+			buildPhases = (
+				2F7F42EF1ADC70E800B39F2E /* Sources */,
+				2F7F42F01ADC70E800B39F2E /* Frameworks */,
+				2F7F42F11ADC70E800B39F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F7F42F51ADC70E800B39F2E /* PBXTargetDependency */,
+			);
+			name = RingGraphTests;
+			productName = RingGraphTests;
+			productReference = 2F7F42F31ADC70E800B39F2E /* RingGraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F7F42D61ADC70E800B39F2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Michał Kreft";
+				TargetAttributes = {
+					2F7F42DD1ADC70E800B39F2E = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					2F7F42F21ADC70E800B39F2E = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 2F7F42DD1ADC70E800B39F2E;
+					};
+				};
+			};
+			buildConfigurationList = 2F7F42D91ADC70E800B39F2E /* Build configuration list for PBXProject "RingGraph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F7F42D51ADC70E800B39F2E;
+			productRefGroup = 2F7F42DF1ADC70E800B39F2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F7F42DD1ADC70E800B39F2E /* RingGraph */,
+				2F7F42F21ADC70E800B39F2E /* RingGraphTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F7F42DC1ADC70E800B39F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F7F42E91ADC70E800B39F2E /* Main.storyboard in Resources */,
+				2F7F42EE1ADC70E800B39F2E /* LaunchScreen.xib in Resources */,
+				2F7F42EB1ADC70E800B39F2E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F7F42F11ADC70E800B39F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F7F42DA1ADC70E800B39F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F7F42E61ADC70E800B39F2E /* ViewController.swift in Sources */,
+				2F7F42E41ADC70E800B39F2E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F7F42EF1ADC70E800B39F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F7F42FA1ADC70E800B39F2E /* RingGraphTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F7F42F51ADC70E800B39F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F7F42DD1ADC70E800B39F2E /* RingGraph */;
+			targetProxy = 2F7F42F41ADC70E800B39F2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F7F42E71ADC70E800B39F2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F7F42E81ADC70E800B39F2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F7F42ED1ADC70E800B39F2E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F7F42FB1ADC70E800B39F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F7F42FC1ADC70E800B39F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F7F42FE1ADC70E800B39F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RingGraph/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F7F42FF1ADC70E800B39F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RingGraph/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2F7F43011ADC70E800B39F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RingGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RingGraph.app/RingGraph";
+			};
+			name = Debug;
+		};
+		2F7F43021ADC70E800B39F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RingGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RingGraph.app/RingGraph";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F7F42D91ADC70E800B39F2E /* Build configuration list for PBXProject "RingGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F7F42FB1ADC70E800B39F2E /* Debug */,
+				2F7F42FC1ADC70E800B39F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F7F42FD1ADC70E800B39F2E /* Build configuration list for PBXNativeTarget "RingGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F7F42FE1ADC70E800B39F2E /* Debug */,
+				2F7F42FF1ADC70E800B39F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2F7F43001ADC70E800B39F2E /* Build configuration list for PBXNativeTarget "RingGraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F7F43011ADC70E800B39F2E /* Debug */,
+				2F7F43021ADC70E800B39F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F7F42D61ADC70E800B39F2E /* Project object */;
+}
