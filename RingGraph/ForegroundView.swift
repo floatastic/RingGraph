@@ -94,9 +94,9 @@ private extension ForegroundView {
     }
     
     private func addRingDescriptionLabels() {
-        let painter = RignGraphPainter(ringGraph: graph, drawingRect: self.frame)
+        let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        for (index, labelFrame) in enumerate(painter.framesForDescriptionLabels()) {
+        for (index, labelFrame) in enumerate(geometry.framesForDescriptionLabels()) {
             let meter = graph.meters[index]
             let label = FadeOutLabel(frame: labelFrame)
             label.text = meter.title.uppercaseString
@@ -109,9 +109,9 @@ private extension ForegroundView {
     }
     
     private func addProgressTextView() {
-        let painter = RignGraphPainter(ringGraph: graph, drawingRect: self.frame)
+        let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        let view = ProgressTextView(frame: painter.frameForDescriptionText(), ringMeter: graph.meters.first!)
+        let view = ProgressTextView(frame: geometry.frameForDescriptionText(), ringMeter: graph.meters.first!)
         addSubview(view)
         progressTextView = view
     }

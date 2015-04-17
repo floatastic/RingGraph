@@ -21,6 +21,7 @@
 		2F7F43101ADC71D500B39F2E /* RingGraphPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */; };
 		2F7F43111ADC71D500B39F2E /* RingGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43091ADC71D500B39F2E /* RingGraphView.swift */; };
 		2F7F43121ADC71D500B39F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F430A1ADC71D500B39F2E /* UIColor.swift */; };
+		7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC14A1ADEF871002DFE0F /* Geometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphPainter.swift; sourceTree = "<group>"; };
 		2F7F43091ADC71D500B39F2E /* RingGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphView.swift; sourceTree = "<group>"; };
 		2F7F430A1ADC71D500B39F2E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7D1AC14A1ADEF871002DFE0F /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				2F7F42EA1ADC70E800B39F2E /* Images.xcassets */,
 				2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */,
 				2F7F42E11ADC70E800B39F2E /* Supporting Files */,
+				7D1AC14A1ADEF871002DFE0F /* Geometry.swift */,
 			);
 			path = RingGraph;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				2F7F430F1ADC71D500B39F2E /* RingGraph.swift in Sources */,
 				2F7F43111ADC71D500B39F2E /* RingGraphView.swift in Sources */,
 				2F7F430E1ADC71D500B39F2E /* ProgressTextView.swift in Sources */,
+				7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */,
 				2F7F430D1ADC71D500B39F2E /* ForegroundView.swift in Sources */,
 				2F7F430B1ADC71D500B39F2E /* AnimationHelpers.swift in Sources */,
 				2F7F430C1ADC71D500B39F2E /* FadeOutLabel.swift in Sources */,
