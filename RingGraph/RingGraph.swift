@@ -32,16 +32,18 @@ struct RingMeter {
     let value: Int
     let maxValue: Int
     let colors: [UIColor]
+    let symbolProvider: SymbolPathProvider
     
     internal let normalizedValue: Float
     internal let backgroundColor: UIColor
     internal let descriptionLabelColor: UIColor
     
-    init(title: String, value: Int, maxValue: Int, colors: [UIColor]) {
+    init(title: String, value: Int, maxValue: Int, colors: [UIColor], symbolProvider: SymbolPathProvider) {
         self.title = title
         self.value = value
         self.maxValue = maxValue
         self.colors = count(colors) > 0 ? colors : [defaultColor]
+        self.symbolProvider = symbolProvider
         
         normalizedValue = value <= maxValue ? Float(value) / Float(maxValue) : 1.0
         
@@ -54,3 +56,4 @@ struct RingMeter {
         }
     }
 }
+

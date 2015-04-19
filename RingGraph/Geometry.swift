@@ -57,6 +57,20 @@ internal struct Geometry {
         return frame
     }
     
+    func framesForRingSymbols() -> [CGRect] {
+        var frames = [CGRect]()
+        
+        for (index, ringMeter) in enumerate(ringGraph.meters) {
+            let radius = radiusForIndex(index)
+            let width = ringWidth * 0.65
+            let origin = CGPoint(x: centerPoint.x - width / 2.0, y: centerPoint.y - radius - width / 2.0)
+            let size = CGSize(width: width, height: width)
+            frames.append(CGRect(origin: origin, size: size))
+        }
+        
+        return frames
+    }
+    
     func radiusForIndex(index: Int) -> CGFloat {
         return maxRadius - CGFloat(ringWidth + 1) * CGFloat(index)
     }

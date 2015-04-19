@@ -22,6 +22,8 @@
 		2F7F43111ADC71D500B39F2E /* RingGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43091ADC71D500B39F2E /* RingGraphView.swift */; };
 		2F7F43121ADC71D500B39F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F430A1ADC71D500B39F2E /* UIColor.swift */; };
 		7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC14A1ADEF871002DFE0F /* Geometry.swift */; };
+		7D3C9C341AE3045A00FC8B9C /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */; };
+		7D3C9C381AE31DF400FC8B9C /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		2F7F43091ADC71D500B39F2E /* RingGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphView.swift; sourceTree = "<group>"; };
 		2F7F430A1ADC71D500B39F2E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7D1AC14A1ADEF871002DFE0F /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolPathProviders.swift; sourceTree = "<group>"; };
+		7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,21 +99,15 @@
 		2F7F42E01ADC70E800B39F2E /* RingGraph */ = {
 			isa = PBXGroup;
 			children = (
-				2F7F43031ADC71D500B39F2E /* AnimationHelpers.swift */,
-				2F7F43041ADC71D500B39F2E /* FadeOutLabel.swift */,
-				2F7F43051ADC71D500B39F2E /* ForegroundView.swift */,
-				2F7F43061ADC71D500B39F2E /* ProgressTextView.swift */,
+				7D3C9C361AE31C4B00FC8B9C /* Helpers */,
+				7D3C9C351AE31C0600FC8B9C /* Views */,
 				2F7F43071ADC71D500B39F2E /* RingGraph.swift */,
-				2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */,
-				2F7F43091ADC71D500B39F2E /* RingGraphView.swift */,
-				2F7F430A1ADC71D500B39F2E /* UIColor.swift */,
 				2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */,
 				2F7F42E51ADC70E800B39F2E /* ViewController.swift */,
 				2F7F42E71ADC70E800B39F2E /* Main.storyboard */,
 				2F7F42EA1ADC70E800B39F2E /* Images.xcassets */,
 				2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */,
 				2F7F42E11ADC70E800B39F2E /* Supporting Files */,
-				7D1AC14A1ADEF871002DFE0F /* Geometry.swift */,
 			);
 			path = RingGraph;
 			sourceTree = "<group>";
@@ -137,6 +135,30 @@
 				2F7F42F81ADC70E800B39F2E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D3C9C351AE31C0600FC8B9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F43091ADC71D500B39F2E /* RingGraphView.swift */,
+				2F7F43061ADC71D500B39F2E /* ProgressTextView.swift */,
+				2F7F43051ADC71D500B39F2E /* ForegroundView.swift */,
+				2F7F43041ADC71D500B39F2E /* FadeOutLabel.swift */,
+				7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7D3C9C361AE31C4B00FC8B9C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F7F430A1ADC71D500B39F2E /* UIColor.swift */,
+				7D1AC14A1ADEF871002DFE0F /* Geometry.swift */,
+				2F7F43031ADC71D500B39F2E /* AnimationHelpers.swift */,
+				7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */,
+				2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,12 +266,14 @@
 				2F7F430E1ADC71D500B39F2E /* ProgressTextView.swift in Sources */,
 				7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */,
 				2F7F430D1ADC71D500B39F2E /* ForegroundView.swift in Sources */,
+				7D3C9C341AE3045A00FC8B9C /* SymbolPathProviders.swift in Sources */,
 				2F7F430B1ADC71D500B39F2E /* AnimationHelpers.swift in Sources */,
 				2F7F430C1ADC71D500B39F2E /* FadeOutLabel.swift in Sources */,
 				2F7F42E61ADC70E800B39F2E /* ViewController.swift in Sources */,
 				2F7F43101ADC71D500B39F2E /* RingGraphPainter.swift in Sources */,
 				2F7F42E41ADC70E800B39F2E /* AppDelegate.swift in Sources */,
 				2F7F43121ADC71D500B39F2E /* UIColor.swift in Sources */,
+				7D3C9C381AE31DF400FC8B9C /* SymbolView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

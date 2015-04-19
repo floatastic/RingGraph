@@ -20,6 +20,7 @@ internal class ForegroundView: UIView {
     var animationState: AnimationState
     var displayLink: CADisplayLink?
     var ringDescriptionLabels = [FadeOutLabel]()
+    var symbolViews = [SymbolView]()
     var progressTextView: ProgressTextView?
     
     required init(frame: CGRect, graph: RingGraph, preset: GraphViewDescriptionPreset) {
@@ -35,6 +36,7 @@ internal class ForegroundView: UIView {
             addProgressTextView()
         case .MetersDescription:
             addRingDescriptionLabels()
+            addRingSymbols()
         case .None:
             break
         }
@@ -105,6 +107,17 @@ private extension ForegroundView {
             label.textColor = meter.descriptionLabelColor
             self.addSubview(label)
             ringDescriptionLabels.append(label)
+        }
+    }
+    
+    private func addRingSymbols() {
+        let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
+        
+        for (index, frame) in enumerate(geometry.framesForRingSymbols()) {
+            let meter = graph.meters[index]
+            let symbolView = SymbolView(frame: frame, symbolProvider: meter.symbolProvider)
+            addSubview(symbolView)
+            symbolViews.append(symbolView)
         }
     }
     
