@@ -9,6 +9,7 @@
 import UIKit
 
 class SymbolView: UIView {
+    let margin: CGFloat = 2
     let symbolProvider: SymbolPathProvider
     let color = UIColor.blackColor().CGColor
     
@@ -25,10 +26,21 @@ class SymbolView: UIView {
     }
 
     override func drawRect(rect: CGRect) {
-        let path = symbolProvider.path(inRect: rect)
+        let path = symbolProvider.path(inRect: rectWithMargins(rect))
         let context = UIGraphicsGetCurrentContext()
         
         path.lineWidth = 3
         path.stroke()
+    }
+    
+    private func rectWithMargins(originalRect: CGRect) -> CGRect {
+        var rect = originalRect
+        
+        rect.origin.x += margin
+        rect.origin.y += margin
+        rect.size.width -= 2 * margin
+        rect.size.height -= 2 * margin
+        
+        return rect
     }
 }
