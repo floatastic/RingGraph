@@ -29,7 +29,6 @@ class SymbolView: UIView {
         let path = symbolProvider.path(inRect: rectWithMargins(rect))
         let context = UIGraphicsGetCurrentContext()
         
-        path.lineWidth = 3
         path.stroke()
     }
     

@@ -62,7 +62,7 @@ internal struct Geometry {
         
         for (index, ringMeter) in enumerate(ringGraph.meters) {
             let radius = radiusForIndex(index)
-            let width = ringWidth * 0.65
+            let width = ringWidth * 0.6
             let origin = CGPoint(x: centerPoint.x - width / 2.0, y: centerPoint.y - radius - width / 2.0)
             let size = CGSize(width: width, height: width)
             frames.append(CGRect(origin: origin, size: size))

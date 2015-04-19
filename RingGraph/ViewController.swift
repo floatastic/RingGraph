@@ -15,18 +15,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pathProvider = TriagnelPathProvider()
+        let trainglePath = TriagnelPathProvider()
+        let rightArrowPath = RightArrowPathProvider()
         
-        let tripleGraphMeters = [RingMeter(title: "Move", value: 100, maxValue: 100, colors: [AppleBlue1, AppleBlue2], symbolProvider: pathProvider),
-            RingMeter(title: "Exercise", value: 72, maxValue: 100, colors: [AppleGreen1, AppleGreen2], symbolProvider: pathProvider),
-            RingMeter(title: "Stand", value: 45, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: pathProvider)]
+        let tripleGraphMeters = [RingMeter(title: "Move", value: 100, maxValue: 100, colors: [AppleBlue1, AppleBlue2], symbolProvider: rightArrowPath),
+            RingMeter(title: "Exercise", value: 72, maxValue: 100, colors: [AppleGreen1, AppleGreen2], symbolProvider: trainglePath),
+            RingMeter(title: "Stand", value: 45, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: trainglePath)]
         
-        let singleGraphMeter = [RingMeter(title: "Move", value: 70, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: pathProvider)]
+        let singleGraphMeter = [RingMeter(title: "Move", value: 70, maxValue: 100, colors: [AppleRed1, AppleRed2])]
         
         let color = UIColor.yellowColor()
-        let singleColorGraphMeters = [RingMeter(title: "Move", value: 68, maxValue: 100, colors: [color], symbolProvider: pathProvider),
-            RingMeter(title: "Exercise", value: 63, maxValue: 100, colors: [color], symbolProvider: pathProvider),
-            RingMeter(title: "Stand", value: 40, maxValue: 100, colors: [color], symbolProvider: pathProvider)]
+        let singleColorGraphMeters = [RingMeter(title: "Move", value: 68, maxValue: 100, colors: [color]),
+            RingMeter(title: "Exercise", value: 63, maxValue: 100, colors: [color]),
+            RingMeter(title: "Stand", value: 40, maxValue: 100, colors: [color])]
         
         if let graph = RingGraph(meters: tripleGraphMeters) {
             let frame = CGRect(x: 160, y: 260, width: 300, height: 300)

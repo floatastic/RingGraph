@@ -38,6 +38,8 @@ struct RingMeter {
     internal let backgroundColor: UIColor
     internal let descriptionLabelColor: UIColor
     
+
+    
     init(title: String, value: Int, maxValue: Int, colors: [UIColor], symbolProvider: SymbolPathProvider) {
         self.title = title
         self.value = value
@@ -54,6 +56,11 @@ struct RingMeter {
             descriptionLabelColor = self.colors.first!.blend(self.colors.last!)
             backgroundColor = descriptionLabelColor.darker()
         }
+    }
+    
+    init(title: String, value: Int, maxValue: Int, colors: [UIColor]) {
+        let pathProvider = NilPathProvider()
+        self.init(title: title, value: value, maxValue: maxValue, colors: colors, symbolProvider: pathProvider)
     }
 }
 
