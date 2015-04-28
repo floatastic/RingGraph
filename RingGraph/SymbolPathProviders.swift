@@ -38,7 +38,71 @@ struct RightArrowPathProvider : SymbolPathProvider {
     
 }
 
-struct TriagnelPathProvider : SymbolPathProvider {
+struct DoubleRightArrowPathProvider : SymbolPathProvider {
+    
+    func path(inRect rect: CGRect) -> UIBezierPath {
+        let margin :CGFloat = 2
+        var points = [CGPoint]()
+        
+        let arrowSpacing :CGFloat = 6
+        
+        points.append(CGPoint(x: CGRectGetMaxX(rect) - arrowSpacing, y: CGRectGetMidY(rect)))
+        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
+        points.append(CGPoint(x: CGRectGetMidX(rect) - arrowSpacing, y: CGRectGetMinY(rect)))
+        points.append(CGPoint(x: CGRectGetMidX(rect) - arrowSpacing, y: CGRectGetMaxY(rect)))
+        
+        points.append(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect)))
+        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
+        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
+        
+        let path = defaultPath()
+        
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[1])
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[2])
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[3])
+        
+        path.moveToPoint(points[4])
+        path.addLineToPoint(points[5])
+        path.moveToPoint(points[4])
+        path.addLineToPoint(points[6])
+        
+        path.closePath()
+        
+        return path
+    }
+    
+}
+
+struct UpArrowPathProvider : SymbolPathProvider {
+    
+    func path(inRect rect: CGRect) -> UIBezierPath {
+        let margin :CGFloat = 2
+        var points = [CGPoint]()
+        
+        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
+        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
+        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
+        points.append(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect)))
+        
+        let path = defaultPath()
+        
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[1])
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[2])
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[3])
+        path.closePath()
+        
+        return path
+    }
+    
+}
+
+struct TrianglePathProvider : SymbolPathProvider {
     
     func path(inRect rect: CGRect) -> UIBezierPath {
         var points = [CGPoint]()
