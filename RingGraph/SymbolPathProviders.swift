@@ -102,26 +102,6 @@ struct UpArrowPathProvider : SymbolPathProvider {
     
 }
 
-struct TrianglePathProvider : SymbolPathProvider {
-    
-    func path(inRect rect: CGRect) -> UIBezierPath {
-        var points = [CGPoint]()
-        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
-        points.append(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect)))
-        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMaxY(rect)))
-        
-        let path = defaultPath()
-        
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[1])
-        path.addLineToPoint(points[2])
-        path.closePath()
-        
-        return path
-    }
-    
-}
-
 internal struct NilPathProvider : SymbolPathProvider {
     func path(inRect rect: CGRect) -> UIBezierPath {
         return UIBezierPath()
