@@ -13,6 +13,12 @@ class SymbolView: UIView {
     let symbolProvider: SymbolPathProvider
     let color = UIColor.blackColor().CGColor
     
+    var animationProgress :Float = 1.0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     required init(frame: CGRect, symbolProvider: SymbolPathProvider) {
         self.symbolProvider = symbolProvider
         
@@ -26,7 +32,7 @@ class SymbolView: UIView {
     }
 
     override func drawRect(rect: CGRect) {
-        let path = symbolProvider.path(inRect: rectWithMargins(rect))
+        let path = symbolProvider.path(inRect: rectWithMargins(rect), forAnimationProgress: animationProgress)
         let context = UIGraphicsGetCurrentContext()
         
         path.stroke()

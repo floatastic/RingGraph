@@ -67,6 +67,10 @@ internal class ForegroundView: UIView {
             label.setAnimationProgress(animationProgress)
         }
         
+        for symbolView in symbolViews {
+            symbolView.animationProgress = animationProgress
+        }
+        
         if let progressTextView = self.progressTextView {
             progressTextView.setAnimationProgress(animationProgress)
         }

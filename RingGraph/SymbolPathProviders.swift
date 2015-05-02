@@ -9,17 +9,55 @@
 import UIKit
 
 protocol SymbolPathProvider {
-    func path(inRect rect: CGRect) -> UIBezierPath
+    func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath
 }
 
-struct RightArrowPathProvider : SymbolPathProvider {
+class DefaultPathProvider {
+    let animationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: 0.3, animationEnd: 0.6)
+    let margin :CGFloat = 2
     
-    func path(inRect rect: CGRect) -> UIBezierPath {
-        let margin :CGFloat = 2
+    func defaultPath() -> UIBezierPath {
+        let path = UIBezierPath()
+        
+        path.lineCapStyle = kCGLineCapRound
+        path.lineJoinStyle = kCGLineJoinRound
+        path.lineWidth = 3
+        
+        return path
+    }
+    
+    func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+        return UIBezierPath()
+    }
+    
+    func normalizedProgress(progress :Float) -> CGFloat {
+        return CGFloat(animationHelper.normalizedProgress(absoluteProgress: progress))
+    }
+}
+
+class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
+    
+    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+        let progress = normalizedProgress(animationProgress)
+        
+        if (progress == 0.0) {
+            return super.path(inRect: rect, forAnimationProgress: animationProgress)
+        }
+        
         var points = [CGPoint]()
         
-        points.append(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect)))
+        let middleEndPoint = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect))
+        
+        var intermediatePoint1 = middleEndPoint
+        intermediatePoint1.x = middleEndPoint.x * progress
+        
+        var intermediatePoint2 = middleEndPoint
+        intermediatePoint2.x = CGRectGetMidX(rect) + middleEndPoint.x * progress / 2
+        
+        points.append(intermediatePoint1)
         points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
+        
+        points.append(intermediatePoint2)
         points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
         points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
         
@@ -27,10 +65,10 @@ struct RightArrowPathProvider : SymbolPathProvider {
         
         path.moveToPoint(points[0])
         path.addLineToPoint(points[1])
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[2])
-        path.moveToPoint(points[0])
+        path.moveToPoint(points[2])
         path.addLineToPoint(points[3])
+        path.moveToPoint(points[2])
+        path.addLineToPoint(points[4])
         path.closePath()
         
         return path
@@ -38,10 +76,9 @@ struct RightArrowPathProvider : SymbolPathProvider {
     
 }
 
-struct DoubleRightArrowPathProvider : SymbolPathProvider {
+class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
     
-    func path(inRect rect: CGRect) -> UIBezierPath {
-        let margin :CGFloat = 2
+    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         var points = [CGPoint]()
         
         let arrowSpacing :CGFloat = 6
@@ -76,44 +113,28 @@ struct DoubleRightArrowPathProvider : SymbolPathProvider {
     
 }
 
-struct UpArrowPathProvider : SymbolPathProvider {
+class UpArrowPathProvider : RightArrowPathProvider, SymbolPathProvider {
     
-    func path(inRect rect: CGRect) -> UIBezierPath {
-        let margin :CGFloat = 2
-        var points = [CGPoint]()
+    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+        var path = super.path(inRect: rect, forAnimationProgress: animationProgress)
         
-        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
-        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
-        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
-        points.append(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect)))
+        let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
+        let radians = CGFloat(-90 * M_PI / 180)
         
-        let path = defaultPath()
+        var transform = CGAffineTransformIdentity
+        transform = CGAffineTransformTranslate(transform, center.x, center.y)
+        transform = CGAffineTransformRotate(transform, radians)
+        transform = CGAffineTransformTranslate(transform, -center.x, -center.y)
         
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[1])
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[2])
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[3])
-        path.closePath()
+        path.applyTransform(transform)
         
         return path
     }
     
 }
 
-internal struct NilPathProvider : SymbolPathProvider {
-    func path(inRect rect: CGRect) -> UIBezierPath {
+internal class NilPathProvider : SymbolPathProvider {
+    func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         return UIBezierPath()
     }
-}
-
-private func defaultPath() -> UIBezierPath {
-    let path = UIBezierPath()
-    
-    path.lineCapStyle = kCGLineCapRound
-    path.lineJoinStyle = kCGLineJoinRound
-    path.lineWidth = 3
-    
-    return path
 }
