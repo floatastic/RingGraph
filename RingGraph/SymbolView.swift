@@ -9,12 +9,14 @@
 import UIKit
 
 class SymbolView: UIView {
+    let animationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: 0.3, animationEnd: 0.5)
     let margin: CGFloat = 2
     let symbolProvider: SymbolPathProvider
     let color = UIColor.blackColor().CGColor
     
     var animationProgress :Float = 1.0 {
         didSet {
+            alpha = CGFloat(animationHelper.normalizedProgress(absoluteProgress: animationProgress))
             setNeedsDisplay()
         }
     }
