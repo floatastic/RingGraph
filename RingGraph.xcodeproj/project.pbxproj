@@ -12,7 +12,6 @@
 		2F7F42E91ADC70E800B39F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42E71ADC70E800B39F2E /* Main.storyboard */; };
 		2F7F42EB1ADC70E800B39F2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42EA1ADC70E800B39F2E /* Images.xcassets */; };
 		2F7F42EE1ADC70E800B39F2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */; };
-		2F7F42FA1ADC70E800B39F2E /* RingGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */; };
 		2F7F430B1ADC71D500B39F2E /* AnimationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43031ADC71D500B39F2E /* AnimationHelpers.swift */; };
 		2F7F430C1ADC71D500B39F2E /* FadeOutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43041ADC71D500B39F2E /* FadeOutLabel.swift */; };
 		2F7F430D1ADC71D500B39F2E /* ForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43051ADC71D500B39F2E /* ForegroundView.swift */; };
@@ -25,6 +24,18 @@
 		7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC14A1ADEF871002DFE0F /* Geometry.swift */; };
 		7D3C9C341AE3045A00FC8B9C /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */; };
 		7D3C9C381AE31DF400FC8B9C /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */; };
+		7D663CB81AF6C55F00994BEA /* RingGraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */; };
+		7D663CB91AF6C5FC00994BEA /* RingGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43071ADC71D500B39F2E /* RingGraph.swift */; };
+		7D663CBA1AF6C63100994BEA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F430A1ADC71D500B39F2E /* UIColor.swift */; };
+		7D663CBB1AF6C65000994BEA /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */; };
+		7D663CBC1AF6C6BE00994BEA /* AnimationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43031ADC71D500B39F2E /* AnimationHelpers.swift */; };
+		7D663CBD1AF6CA1F00994BEA /* RingGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43091ADC71D500B39F2E /* RingGraphView.swift */; };
+		7D663CBE1AF6CA5000994BEA /* ForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43051ADC71D500B39F2E /* ForegroundView.swift */; };
+		7D663CBF1AF6CA6900994BEA /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC14A1ADEF871002DFE0F /* Geometry.swift */; };
+		7D663CC01AF6CA6900994BEA /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43061ADC71D500B39F2E /* ProgressTextView.swift */; };
+		7D663CC11AF6CA6900994BEA /* FadeOutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43041ADC71D500B39F2E /* FadeOutLabel.swift */; };
+		7D663CC21AF6CA6900994BEA /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */; };
+		7D663CC31AF6CA7B00994BEA /* RingGraphPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */; };
 		7D7CB6401AF6ACCD00B79FDD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D7CB63F1AF6ACCD00B79FDD /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +59,6 @@
 		2F7F42ED1ADC70E800B39F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2F7F42F31ADC70E800B39F2E /* RingGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RingGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7F42F81ADC70E800B39F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingGraphTests.swift; sourceTree = "<group>"; };
 		2F7F43031ADC71D500B39F2E /* AnimationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelpers.swift; sourceTree = "<group>"; };
 		2F7F43041ADC71D500B39F2E /* FadeOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutLabel.swift; sourceTree = "<group>"; };
 		2F7F43051ADC71D500B39F2E /* ForegroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForegroundView.swift; sourceTree = "<group>"; };
@@ -62,6 +72,7 @@
 		7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolPathProviders.swift; sourceTree = "<group>"; };
 		7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		7D663CB41AF6B37600994BEA /* RingGraphTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RingGraphTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphViewTests.swift; sourceTree = "<group>"; };
 		7D7CB63F1AF6ACCD00B79FDD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1E1756F7105D651B1767B20 /* libPods-RingGraphTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RingGraphTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8406747DA0CE710645D9517 /* Pods-RingGraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingGraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RingGraphTests/Pods-RingGraphTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,9 +153,9 @@
 		2F7F42F61ADC70E800B39F2E /* RingGraphTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F7F42F91ADC70E800B39F2E /* RingGraphTests.swift */,
 				2F7F42F71ADC70E800B39F2E /* Supporting Files */,
 				7D663CB41AF6B37600994BEA /* RingGraphTests-Bridging-Header.h */,
+				7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */,
 			);
 			path = RingGraphTests;
 			sourceTree = "<group>";
@@ -346,7 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F7F42FA1ADC70E800B39F2E /* RingGraphTests.swift in Sources */,
+				7D663CC31AF6CA7B00994BEA /* RingGraphPainter.swift in Sources */,
+				7D663CBF1AF6CA6900994BEA /* Geometry.swift in Sources */,
+				7D663CC01AF6CA6900994BEA /* ProgressTextView.swift in Sources */,
+				7D663CC11AF6CA6900994BEA /* FadeOutLabel.swift in Sources */,
+				7D663CC21AF6CA6900994BEA /* SymbolView.swift in Sources */,
+				7D663CBE1AF6CA5000994BEA /* ForegroundView.swift in Sources */,
+				7D663CBD1AF6CA1F00994BEA /* RingGraphView.swift in Sources */,
+				7D663CBC1AF6C6BE00994BEA /* AnimationHelpers.swift in Sources */,
+				7D663CBB1AF6C65000994BEA /* SymbolPathProviders.swift in Sources */,
+				7D663CBA1AF6C63100994BEA /* UIColor.swift in Sources */,
+				7D663CB91AF6C5FC00994BEA /* RingGraph.swift in Sources */,
+				7D663CB81AF6C55F00994BEA /* RingGraphViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
