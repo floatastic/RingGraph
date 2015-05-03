@@ -1,0 +1,10 @@
+PODS:
+  - FBSnapshotTestCase (1.8)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase (= 1.8.0)
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 05065a47e7acc9c919315648ca39fb614f29ebd4
+
+COCOAPODS: 0.37.0
