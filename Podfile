@@ -1,3 +1,4 @@
-target "RingGraphTests" do
-    pod 'FBSnapshotTestCase', '1.8.0'
+target "RingGraphTests", :exclusive => true do
+    use_frameworks!
+    pod 'Nimble-Snapshots', '0.4.0'
 end

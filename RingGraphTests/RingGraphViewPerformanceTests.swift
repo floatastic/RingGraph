@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Michał Kreft. All rights reserved.
 //
 
-import XCTest
+import FBSnapshotTestCase
 
-class RingGraphViewTests: FBSnapshotTestCase {
+class RingGraphViewPerformanceTests: FBSnapshotTestCase {
+    
     var pushedContext :CGContext?
+    let helper = TestsHelper()
 
     override func setUp() {
         super.setUp()
@@ -21,14 +23,9 @@ class RingGraphViewTests: FBSnapshotTestCase {
     }
 
     func testPerformanceExample() {
-        let tripleGraphMeters = [RingMeter(title: "Move", value: 100, maxValue: 100, colors: [AppleBlue1, AppleBlue2], symbolProvider: RightArrowPathProvider()),
-            RingMeter(title: "Exercise", value: 100, maxValue: 100, colors: [AppleGreen1, AppleGreen2], symbolProvider: DoubleRightArrowPathProvider()),
-            RingMeter(title: "Stand", value: 100, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: UpArrowPathProvider())]
-        
+        let tripleGraphMeters = helper.tripleGraphMeters(value: 100)
         let graph = RingGraph(meters: tripleGraphMeters)
-        
-        let frame = CGRect(x: 160, y: 260, width: 300, height: 300)
-        let ringGraphView = RingGraphView(frame: frame, graph: graph!, preset: .MetersDescription)
+        let ringGraphView = RingGraphView(frame: helper.defaultFrame(), graph: graph!, preset: .MetersDescription)
         
         pushContext(ringGraphView)
         

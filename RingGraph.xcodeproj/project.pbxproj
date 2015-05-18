@@ -20,11 +20,11 @@
 		2F7F43101ADC71D500B39F2E /* RingGraphPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */; };
 		2F7F43111ADC71D500B39F2E /* RingGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43091ADC71D500B39F2E /* RingGraphView.swift */; };
 		2F7F43121ADC71D500B39F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F430A1ADC71D500B39F2E /* UIColor.swift */; };
-		46922E9AE469E19A01B1F386 /* libPods-RingGraphTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E1756F7105D651B1767B20 /* libPods-RingGraphTests.a */; };
+		316F09F4E22E536B72575394 /* Pods_RingGraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C114A358F722FECB2DE6DDD6 /* Pods_RingGraphTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7D1AC14B1ADEF871002DFE0F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC14A1ADEF871002DFE0F /* Geometry.swift */; };
 		7D3C9C341AE3045A00FC8B9C /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */; };
 		7D3C9C381AE31DF400FC8B9C /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */; };
-		7D663CB81AF6C55F00994BEA /* RingGraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */; };
+		7D663CB81AF6C55F00994BEA /* RingGraphViewPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D663CB71AF6C55F00994BEA /* RingGraphViewPerformanceTests.swift */; };
 		7D663CB91AF6C5FC00994BEA /* RingGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43071ADC71D500B39F2E /* RingGraph.swift */; };
 		7D663CBA1AF6C63100994BEA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F430A1ADC71D500B39F2E /* UIColor.swift */; };
 		7D663CBB1AF6C65000994BEA /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */; };
@@ -37,6 +37,8 @@
 		7D663CC21AF6CA6900994BEA /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */; };
 		7D663CC31AF6CA7B00994BEA /* RingGraphPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */; };
 		7D7CB6401AF6ACCD00B79FDD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D7CB63F1AF6ACCD00B79FDD /* Podfile */; };
+		7DB9A4E21B0A72A4002C385E /* RingGraphViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9A4E11B0A72A4002C385E /* RingGraphViewSpec.swift */; };
+		7DB9A4E41B0A73B1002C385E /* TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9A4E31B0A73B1002C385E /* TestsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +74,11 @@
 		7D3C9C331AE3045A00FC8B9C /* SymbolPathProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolPathProviders.swift; sourceTree = "<group>"; };
 		7D3C9C371AE31DF300FC8B9C /* SymbolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		7D663CB41AF6B37600994BEA /* RingGraphTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RingGraphTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphViewTests.swift; sourceTree = "<group>"; };
+		7D663CB71AF6C55F00994BEA /* RingGraphViewPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphViewPerformanceTests.swift; sourceTree = "<group>"; };
 		7D7CB63F1AF6ACCD00B79FDD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B1E1756F7105D651B1767B20 /* libPods-RingGraphTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RingGraphTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DB9A4E11B0A72A4002C385E /* RingGraphViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphViewSpec.swift; sourceTree = "<group>"; };
+		7DB9A4E31B0A73B1002C385E /* TestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsHelper.swift; sourceTree = "<group>"; };
+		C114A358F722FECB2DE6DDD6 /* Pods_RingGraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RingGraphTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8406747DA0CE710645D9517 /* Pods-RingGraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RingGraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RingGraphTests/Pods-RingGraphTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46922E9AE469E19A01B1F386 /* libPods-RingGraphTests.a in Frameworks */,
+				316F09F4E22E536B72575394 /* Pods_RingGraphTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +104,7 @@
 		2C442FC6FAE22EA578361D06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B1E1756F7105D651B1767B20 /* libPods-RingGraphTests.a */,
+				C114A358F722FECB2DE6DDD6 /* Pods_RingGraphTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,7 +159,9 @@
 			children = (
 				2F7F42F71ADC70E800B39F2E /* Supporting Files */,
 				7D663CB41AF6B37600994BEA /* RingGraphTests-Bridging-Header.h */,
-				7D663CB71AF6C55F00994BEA /* RingGraphViewTests.swift */,
+				7D663CB71AF6C55F00994BEA /* RingGraphViewPerformanceTests.swift */,
+				7DB9A4E11B0A72A4002C385E /* RingGraphViewSpec.swift */,
+				7DB9A4E31B0A73B1002C385E /* TestsHelper.swift */,
 			);
 			path = RingGraphTests;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				2F7F42F01ADC70E800B39F2E /* Frameworks */,
 				2F7F42F11ADC70E800B39F2E /* Resources */,
 				13A4AE5CEF533C5D80E84167 /* Copy Pods Resources */,
+				ACE5A0A73192AA545C4611A4 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,6 +322,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RingGraphTests/Pods-RingGraphTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ACE5A0A73192AA545C4611A4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RingGraphTests/Pods-RingGraphTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B1282D524FBACA8C2369C58A /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,11 +386,13 @@
 				7D663CC21AF6CA6900994BEA /* SymbolView.swift in Sources */,
 				7D663CBE1AF6CA5000994BEA /* ForegroundView.swift in Sources */,
 				7D663CBD1AF6CA1F00994BEA /* RingGraphView.swift in Sources */,
+				7DB9A4E41B0A73B1002C385E /* TestsHelper.swift in Sources */,
 				7D663CBC1AF6C6BE00994BEA /* AnimationHelpers.swift in Sources */,
+				7DB9A4E21B0A72A4002C385E /* RingGraphViewSpec.swift in Sources */,
 				7D663CBB1AF6C65000994BEA /* SymbolPathProviders.swift in Sources */,
 				7D663CBA1AF6C63100994BEA /* UIColor.swift in Sources */,
 				7D663CB91AF6C5FC00994BEA /* RingGraph.swift in Sources */,
-				7D663CB81AF6C55F00994BEA /* RingGraphViewTests.swift in Sources */,
+				7D663CB81AF6C55F00994BEA /* RingGraphViewPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
