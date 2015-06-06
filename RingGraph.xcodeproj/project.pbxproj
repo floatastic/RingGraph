@@ -55,8 +55,8 @@
 /* Begin PBXFileReference section */
 		2F7F42DE1ADC70E800B39F2E /* RingGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7F42E21ADC70E800B39F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F7F42E51ADC70E800B39F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F7F42E31ADC70E800B39F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		2F7F42E51ADC70E800B39F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Example/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		2F7F42E81ADC70E800B39F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F7F42EA1ADC70E800B39F2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F7F42ED1ADC70E800B39F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 		2F7F42D51ADC70E800B39F2E = {
 			isa = PBXGroup;
 			children = (
+				7D5B7B591B23737B00BFEE50 /* Example */,
 				7D5B7B251B236A3F00BFEE50 /* RingGraph.podspec */,
 				7D7CB63F1AF6ACCD00B79FDD /* Podfile */,
 				2F7F42E01ADC70E800B39F2E /* RingGraph */,
@@ -208,6 +209,13 @@
 				2F7F43081ADC71D500B39F2E /* RingGraphPainter.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		7D5B7B591B23737B00BFEE50 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +425,7 @@
 				2F7F42E81ADC70E800B39F2E /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../Example;
 			sourceTree = "<group>";
 		};
 		2F7F42EC1ADC70E800B39F2E /* LaunchScreen.xib */ = {
@@ -425,7 +434,8 @@
 				2F7F42ED1ADC70E800B39F2E /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
+			path = Example;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
