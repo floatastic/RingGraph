@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
-    s.name = 'RingGrapg'
-    s.version = '0.8.1'
+    s.name = 'RingGraph'
+    s.version = '0.2.0'
     s.license = 'MIT'
-    s.summary = 'CoreMotion Made insanely simple'
-    s.homepage = 'https://github.com/MHaroonBaig/MotionKit'
+    s.summary = 'Circular graph for attractive data presentation. Similar to AppleWatch fitness graphs.'
+    s.homepage = 'https://github.com/yomajkel/RingGraph'
     s.social_media_url = 'https://twitter.com/michal_kreft'
     s.authors = { 'Michał Kreft' => 'kreft.michal@gmail.com' }
     s.source = { :git => 'https://github.com/yomajkel/RingGraph.git', :tag => s.version }
