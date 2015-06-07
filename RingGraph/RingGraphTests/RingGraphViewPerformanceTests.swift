@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 Michał Kreft. All rights reserved.
 //
 
-import FBSnapshotTestCase
+import XCTest
+import RingGraph
 
-class RingGraphViewPerformanceTests: FBSnapshotTestCase {
+class RingGraphViewPerformanceTests: XCTestCase {
     
     var pushedContext :CGContext?
     let helper = TestsHelper()
@@ -22,7 +23,7 @@ class RingGraphViewPerformanceTests: FBSnapshotTestCase {
         super.tearDown()
     }
 
-    func testPerformanceExample() {
+    func testDrawingPerformance() {
         let tripleGraphMeters = helper.tripleGraphMeters(value: 100)
         let graph = RingGraph(meters: tripleGraphMeters)
         let ringGraphView = RingGraphView(frame: helper.defaultFrame(), graph: graph!, preset: .MetersDescription)

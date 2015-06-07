@@ -11,13 +11,15 @@ import UIKit
 let DefaultSymbolAnimationStart :Float = 0.3
 let DefaultSymbolAnimationEnd :Float = 0.6
 
-protocol SymbolPathProvider {
+public protocol SymbolPathProvider {
     func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath
 }
 
-class DefaultPathProvider {
+public class DefaultPathProvider {
     let animationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: DefaultSymbolAnimationStart, animationEnd: DefaultSymbolAnimationEnd)
     let margin :CGFloat = 2
+    
+    public init() { }
     
     func defaultPath() -> UIBezierPath {
         let path = UIBezierPath()
@@ -29,7 +31,7 @@ class DefaultPathProvider {
         return path
     }
     
-    func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+    public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         return UIBezierPath()
     }
     
@@ -38,9 +40,9 @@ class DefaultPathProvider {
     }
 }
 
-class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
+public class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
     
-    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+    override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         let progress = normalizedProgress(animationProgress)
         
         if (progress == 0.0) {
@@ -79,9 +81,9 @@ class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
     
 }
 
-class UpArrowPathProvider : RightArrowPathProvider, SymbolPathProvider {
+public class UpArrowPathProvider : RightArrowPathProvider, SymbolPathProvider {
     
-    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+    override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         var path = super.path(inRect: rect, forAnimationProgress: animationProgress)
         
         let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
@@ -101,13 +103,13 @@ class UpArrowPathProvider : RightArrowPathProvider, SymbolPathProvider {
 
 private let intermediateAnimationPoint :Float = DefaultSymbolAnimationEnd - 0.1
 
-class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
+public class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
     
     let leftAnimationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: DefaultSymbolAnimationStart, animationEnd: intermediateAnimationPoint)
     let rightAnimationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: intermediateAnimationPoint, animationEnd: DefaultSymbolAnimationEnd)
     let arrowSpacing :CGFloat = 6
     
-    override func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+    override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         let progress = normalizedProgress(animationProgress)
         
         if (progress == 0.0) {

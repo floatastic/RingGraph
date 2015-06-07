@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-struct RingGraph {
+public struct RingGraph {
     let meters: [RingMeter]
     
-    init?(meters: [RingMeter]) {
+    public init?(meters: [RingMeter]) {
         self.meters = meters
         
         if (count(meters) == 0) {
@@ -20,14 +20,14 @@ struct RingGraph {
         }
     }
     
-    init?(meter: RingMeter) {
+    public init?(meter: RingMeter) {
         self.init(meters: [meter])
     }
 }
 
 private let defaultColor = UIColor.lightGrayColor()
 
-struct RingMeter {
+public struct RingMeter {
     let title: String
     let value: Int
     let maxValue: Int
@@ -40,7 +40,7 @@ struct RingMeter {
     
 
     
-    init(title: String, value: Int, maxValue: Int, colors: [UIColor], symbolProvider: SymbolPathProvider) {
+    public init(title: String, value: Int, maxValue: Int, colors: [UIColor], symbolProvider: SymbolPathProvider) {
         self.title = title
         self.value = value
         self.maxValue = maxValue
@@ -58,7 +58,7 @@ struct RingMeter {
         }
     }
     
-    init(title: String, value: Int, maxValue: Int, colors: [UIColor]) {
+    public init(title: String, value: Int, maxValue: Int, colors: [UIColor]) {
         let pathProvider = NilPathProvider()
         self.init(title: title, value: value, maxValue: maxValue, colors: colors, symbolProvider: pathProvider)
     }

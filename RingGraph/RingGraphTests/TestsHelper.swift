@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RingGraph
 
 class TestsHelper: NSObject {
     

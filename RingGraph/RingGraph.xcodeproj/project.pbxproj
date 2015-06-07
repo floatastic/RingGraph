@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D5B7B981B24AE2C00BFEE50 /* RingGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D5B7B971B24AE2C00BFEE50 /* RingGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D5B7B9E1B24AE2C00BFEE50 /* RingGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5B7B921B24AE2C00BFEE50 /* RingGraph.framework */; };
+		7D5B7BB91B24B27100BFEE50 /* AnimationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BAE1B24B27100BFEE50 /* AnimationHelpers.swift */; };
+		7D5B7BBA1B24B27100BFEE50 /* FadeOutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BAF1B24B27100BFEE50 /* FadeOutLabel.swift */; };
+		7D5B7BBB1B24B27100BFEE50 /* ForegroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB01B24B27100BFEE50 /* ForegroundView.swift */; };
+		7D5B7BBC1B24B27100BFEE50 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB11B24B27100BFEE50 /* Geometry.swift */; };
+		7D5B7BBD1B24B27100BFEE50 /* ProgressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB21B24B27100BFEE50 /* ProgressTextView.swift */; };
+		7D5B7BBE1B24B27100BFEE50 /* RingGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB31B24B27100BFEE50 /* RingGraph.swift */; };
+		7D5B7BBF1B24B27100BFEE50 /* RingGraphPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB41B24B27100BFEE50 /* RingGraphPainter.swift */; };
+		7D5B7BC01B24B27100BFEE50 /* RingGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB51B24B27100BFEE50 /* RingGraphView.swift */; };
+		7D5B7BC11B24B27100BFEE50 /* SymbolPathProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB61B24B27100BFEE50 /* SymbolPathProviders.swift */; };
+		7D5B7BC21B24B27100BFEE50 /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB71B24B27100BFEE50 /* SymbolView.swift */; };
+		7D5B7BC31B24B27100BFEE50 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B7BB81B24B27100BFEE50 /* UIColor.swift */; };
+		7DA169DB1B24D620009EB270 /* RingGraphViewPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA169D81B24D620009EB270 /* RingGraphViewPerformanceTests.swift */; };
+		7DA169DD1B24D620009EB270 /* TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA169DA1B24D620009EB270 /* TestsHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D5B7B9F1B24AE2C00BFEE50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D5B7B891B24AE2C00BFEE50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D5B7B911B24AE2C00BFEE50;
+			remoteInfo = RingGraph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D5B7B921B24AE2C00BFEE50 /* RingGraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RingGraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D5B7B961B24AE2C00BFEE50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5B7B971B24AE2C00BFEE50 /* RingGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RingGraph.h; sourceTree = "<group>"; };
+		7D5B7B9D1B24AE2C00BFEE50 /* RingGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RingGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D5B7BA31B24AE2C00BFEE50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5B7BAE1B24B27100BFEE50 /* AnimationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelpers.swift; sourceTree = "<group>"; };
+		7D5B7BAF1B24B27100BFEE50 /* FadeOutLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutLabel.swift; sourceTree = "<group>"; };
+		7D5B7BB01B24B27100BFEE50 /* ForegroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForegroundView.swift; sourceTree = "<group>"; };
+		7D5B7BB11B24B27100BFEE50 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		7D5B7BB21B24B27100BFEE50 /* ProgressTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressTextView.swift; sourceTree = "<group>"; };
+		7D5B7BB31B24B27100BFEE50 /* RingGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraph.swift; sourceTree = "<group>"; };
+		7D5B7BB41B24B27100BFEE50 /* RingGraphPainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphPainter.swift; sourceTree = "<group>"; };
+		7D5B7BB51B24B27100BFEE50 /* RingGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphView.swift; sourceTree = "<group>"; };
+		7D5B7BB61B24B27100BFEE50 /* SymbolPathProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolPathProviders.swift; sourceTree = "<group>"; };
+		7D5B7BB71B24B27100BFEE50 /* SymbolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
+		7D5B7BB81B24B27100BFEE50 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7DA169D81B24D620009EB270 /* RingGraphViewPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingGraphViewPerformanceTests.swift; sourceTree = "<group>"; };
+		7DA169DA1B24D620009EB270 /* TestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D5B7B8E1B24AE2C00BFEE50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5B7B9A1B24AE2C00BFEE50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5B7B9E1B24AE2C00BFEE50 /* RingGraph.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D5B7B881B24AE2C00BFEE50 = {
+			isa = PBXGroup;
+			children = (
+				7D5B7B941B24AE2C00BFEE50 /* RingGraph */,
+				7D5B7BA11B24AE2C00BFEE50 /* RingGraphTests */,
+				7D5B7B931B24AE2C00BFEE50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D5B7B931B24AE2C00BFEE50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D5B7B921B24AE2C00BFEE50 /* RingGraph.framework */,
+				7D5B7B9D1B24AE2C00BFEE50 /* RingGraphTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D5B7B941B24AE2C00BFEE50 /* RingGraph */ = {
+			isa = PBXGroup;
+			children = (
+				7D5B7B971B24AE2C00BFEE50 /* RingGraph.h */,
+				7D5B7BB31B24B27100BFEE50 /* RingGraph.swift */,
+				7D5B7BAE1B24B27100BFEE50 /* AnimationHelpers.swift */,
+				7D5B7BAF1B24B27100BFEE50 /* FadeOutLabel.swift */,
+				7D5B7BB01B24B27100BFEE50 /* ForegroundView.swift */,
+				7D5B7BB11B24B27100BFEE50 /* Geometry.swift */,
+				7D5B7BB21B24B27100BFEE50 /* ProgressTextView.swift */,
+				7D5B7BB41B24B27100BFEE50 /* RingGraphPainter.swift */,
+				7D5B7BB51B24B27100BFEE50 /* RingGraphView.swift */,
+				7D5B7BB61B24B27100BFEE50 /* SymbolPathProviders.swift */,
+				7D5B7BB71B24B27100BFEE50 /* SymbolView.swift */,
+				7D5B7BB81B24B27100BFEE50 /* UIColor.swift */,
+				7D5B7B951B24AE2C00BFEE50 /* Supporting Files */,
+			);
+			path = RingGraph;
+			sourceTree = "<group>";
+		};
+		7D5B7B951B24AE2C00BFEE50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D5B7B961B24AE2C00BFEE50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D5B7BA11B24AE2C00BFEE50 /* RingGraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DA169D81B24D620009EB270 /* RingGraphViewPerformanceTests.swift */,
+				7DA169DA1B24D620009EB270 /* TestsHelper.swift */,
+				7D5B7BA21B24AE2C00BFEE50 /* Supporting Files */,
+			);
+			path = RingGraphTests;
+			sourceTree = "<group>";
+		};
+		7D5B7BA21B24AE2C00BFEE50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D5B7BA31B24AE2C00BFEE50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D5B7B8F1B24AE2C00BFEE50 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5B7B981B24AE2C00BFEE50 /* RingGraph.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D5B7B911B24AE2C00BFEE50 /* RingGraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D5B7BA81B24AE2C00BFEE50 /* Build configuration list for PBXNativeTarget "RingGraph" */;
+			buildPhases = (
+				7D5B7B8D1B24AE2C00BFEE50 /* Sources */,
+				7D5B7B8E1B24AE2C00BFEE50 /* Frameworks */,
+				7D5B7B8F1B24AE2C00BFEE50 /* Headers */,
+				7D5B7B901B24AE2C00BFEE50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RingGraph;
+			productName = RingGraph;
+			productReference = 7D5B7B921B24AE2C00BFEE50 /* RingGraph.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7D5B7B9C1B24AE2C00BFEE50 /* RingGraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D5B7BAB1B24AE2C00BFEE50 /* Build configuration list for PBXNativeTarget "RingGraphTests" */;
+			buildPhases = (
+				7D5B7B991B24AE2C00BFEE50 /* Sources */,
+				7D5B7B9A1B24AE2C00BFEE50 /* Frameworks */,
+				7D5B7B9B1B24AE2C00BFEE50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D5B7BA01B24AE2C00BFEE50 /* PBXTargetDependency */,
+			);
+			name = RingGraphTests;
+			productName = RingGraphTests;
+			productReference = 7D5B7B9D1B24AE2C00BFEE50 /* RingGraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D5B7B891B24AE2C00BFEE50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = yomajkel;
+				TargetAttributes = {
+					7D5B7B911B24AE2C00BFEE50 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					7D5B7B9C1B24AE2C00BFEE50 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 7D5B7B8C1B24AE2C00BFEE50 /* Build configuration list for PBXProject "RingGraph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7D5B7B881B24AE2C00BFEE50;
+			productRefGroup = 7D5B7B931B24AE2C00BFEE50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D5B7B911B24AE2C00BFEE50 /* RingGraph */,
+				7D5B7B9C1B24AE2C00BFEE50 /* RingGraphTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D5B7B901B24AE2C00BFEE50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5B7B9B1B24AE2C00BFEE50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D5B7B8D1B24AE2C00BFEE50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5B7BBB1B24B27100BFEE50 /* ForegroundView.swift in Sources */,
+				7D5B7BBC1B24B27100BFEE50 /* Geometry.swift in Sources */,
+				7D5B7BBE1B24B27100BFEE50 /* RingGraph.swift in Sources */,
+				7D5B7BC01B24B27100BFEE50 /* RingGraphView.swift in Sources */,
+				7D5B7BBD1B24B27100BFEE50 /* ProgressTextView.swift in Sources */,
+				7D5B7BC11B24B27100BFEE50 /* SymbolPathProviders.swift in Sources */,
+				7D5B7BC21B24B27100BFEE50 /* SymbolView.swift in Sources */,
+				7D5B7BC31B24B27100BFEE50 /* UIColor.swift in Sources */,
+				7D5B7BB91B24B27100BFEE50 /* AnimationHelpers.swift in Sources */,
+				7D5B7BBF1B24B27100BFEE50 /* RingGraphPainter.swift in Sources */,
+				7D5B7BBA1B24B27100BFEE50 /* FadeOutLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5B7B991B24AE2C00BFEE50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA169DD1B24D620009EB270 /* TestsHelper.swift in Sources */,
+				7DA169DB1B24D620009EB270 /* RingGraphViewPerformanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D5B7BA01B24AE2C00BFEE50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D5B7B911B24AE2C00BFEE50 /* RingGraph */;
+			targetProxy = 7D5B7B9F1B24AE2C00BFEE50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7D5B7BA61B24AE2C00BFEE50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7D5B7BA71B24AE2C00BFEE50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D5B7BA91B24AE2C00BFEE50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RingGraph/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D5B7BAA1B24AE2C00BFEE50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RingGraph/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7D5B7BAC1B24AE2C00BFEE50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RingGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D5B7BAD1B24AE2C00BFEE50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RingGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D5B7B8C1B24AE2C00BFEE50 /* Build configuration list for PBXProject "RingGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D5B7BA61B24AE2C00BFEE50 /* Debug */,
+				7D5B7BA71B24AE2C00BFEE50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D5B7BA81B24AE2C00BFEE50 /* Build configuration list for PBXNativeTarget "RingGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D5B7BA91B24AE2C00BFEE50 /* Debug */,
+				7D5B7BAA1B24AE2C00BFEE50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D5B7BAB1B24AE2C00BFEE50 /* Build configuration list for PBXNativeTarget "RingGraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D5B7BAC1B24AE2C00BFEE50 /* Debug */,
+				7D5B7BAD1B24AE2C00BFEE50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D5B7B891B24AE2C00BFEE50 /* Project object */;
+}

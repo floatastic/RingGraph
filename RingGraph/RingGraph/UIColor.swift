@@ -9,12 +9,12 @@
 //import Foundation
 import UIKit
 
-internal let AppleBlue1 = UIColor(red: 0.965, green: 0.094, blue: 0.122, alpha: 1.0)
-internal let AppleBlue2 = UIColor(red: 0.973, green: 0.0, blue: 0.671, alpha: 1.0)
-internal let AppleGreen1 = UIColor(red: 0.647, green: 1.0, blue: 0.0, alpha: 1.0)
-internal let AppleGreen2 = UIColor(red: 0.845, green: 1.0, blue: 0.004, alpha: 1.0)
-internal let AppleRed1 = UIColor(red: 0.271, green: 0.878, blue: 0.984, alpha: 1.0)
-internal let AppleRed2 = UIColor(red: 0.306, green: 0.988, blue: 0.918, alpha: 1.0)
+public let AppleBlue1 = UIColor(red: 0.965, green: 0.094, blue: 0.122, alpha: 1.0)
+public let AppleBlue2 = UIColor(red: 0.973, green: 0.0, blue: 0.671, alpha: 1.0)
+public let AppleGreen1 = UIColor(red: 0.647, green: 1.0, blue: 0.0, alpha: 1.0)
+public let AppleGreen2 = UIColor(red: 0.845, green: 1.0, blue: 0.004, alpha: 1.0)
+public let AppleRed1 = UIColor(red: 0.271, green: 0.878, blue: 0.984, alpha: 1.0)
+public let AppleRed2 = UIColor(red: 0.306, green: 0.988, blue: 0.918, alpha: 1.0)
 
 internal extension UIColor {
     

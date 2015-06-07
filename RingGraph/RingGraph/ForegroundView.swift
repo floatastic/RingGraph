@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum GraphViewDescriptionPreset {
+public enum GraphViewDescriptionPreset {
     case None
     case CentralDescription
     case MetersDescription

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  RingGraph
+//  Example
 //
-//  Created by Michał Kreft on 13/04/15.
-//  Copyright (c) 2015 Michał Kreft. All rights reserved.
+//  Created by Kreft, Michal on 07.06.15.
+//  Copyright (c) 2015 yomajkel. All rights reserved.
 //
 
 import UIKit

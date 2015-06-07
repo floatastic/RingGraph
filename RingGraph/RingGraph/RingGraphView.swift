@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RingGraphView: UIView {
+public class RingGraphView: UIView {
     let graph: RingGraph
     let foregroundView :ForegroundView
     
-    required init(frame: CGRect, graph: RingGraph, preset: GraphViewDescriptionPreset) {
+    required public init(frame: CGRect, graph: RingGraph, preset: GraphViewDescriptionPreset) {
         self.graph = graph
         
         let foregroundViewFrame = CGRect(origin: CGPoint(), size: frame.size)
@@ -23,16 +23,16 @@ class RingGraphView: UIView {
         self.addSubview(foregroundView)
     }
 
-    required init(coder aDecoder: NSCoder) { //ugh!
+    required public init(coder aDecoder: NSCoder) { //ugh!
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext())
         painter.drawBackground()
     }
     
-    func animateGraph() {
+    public func animateGraph() {
         foregroundView.animate()
     }
 }
