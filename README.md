@@ -46,6 +46,10 @@ if let graph = RingGraph(meters: singleColorGraphMeters) {
 	let ringGraphView = RingGraphView(frame: frame, graph: graph, preset: .None)
 }
 ```
+##Current impediments you should consider
+Aside from all visual improvements that are still needed there are two major functional differences that still need to be fixed.
+* Ring can onbly present max value of 100%. This means it can not go over 360 degrees.
+* Graph can only be animated from 0 to end value. So it is currently impossible to present graph at 50% value and animate it to i.e. 75%.
 
 ##License
 RingGraph is published under the MIT license.
