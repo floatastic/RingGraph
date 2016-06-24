@@ -38,17 +38,17 @@ class RingGraphViewPerformanceTests: XCTestCase {
     private func pushContext(forView :UIView) {
         let scaleFactor = UIScreen.mainScreen().scale
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
         let bounds = forView.bounds
         let width = Int(bounds.size.width * scaleFactor)
         let height = Int(bounds.size.height * scaleFactor)
         
-        let context = CGBitmapContextCreate(nil, width, height, 8, width * 4, colorSpace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, width, height, 8, width * 4, colorSpace, bitmapInfo.rawValue)!
         UIGraphicsPushContext(context)
     }
     
     private func popContext() {
-        if let pushedContext = pushedContext {
+        if let _ = pushedContext {
             UIGraphicsPopContext()
             self.pushedContext = nil
         }

@@ -35,7 +35,7 @@ class SymbolView: UIView {
 
     override func drawRect(rect: CGRect) {
         let path = symbolProvider.path(inRect: rectWithMargins(rect), forAnimationProgress: animationProgress)
-        let context = UIGraphicsGetCurrentContext()
+        let _ = UIGraphicsGetCurrentContext()
         
         path.stroke()
     }

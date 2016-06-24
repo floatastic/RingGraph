@@ -64,7 +64,6 @@ private extension FadeOutLabel {
             } else {
                 let color = self.textColor.colorWithAlphaComponent(CGFloat(lastFadeCharacterAlpha))
                 let range = NSRange(location: 0, length: 1)
-                let attribute = [NSForegroundColorAttributeName : color]
                 let attributedString = NSMutableAttributedString(string: text)
                 attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
                 self.attributedText = attributedString

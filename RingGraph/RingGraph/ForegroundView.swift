@@ -81,7 +81,7 @@ internal class ForegroundView: UIView {
             endAnimation()
         }
         
-        displayLink = CADisplayLink(target: self, selector: "setNeedsDisplay")
+        displayLink = CADisplayLink(target: self, selector: #selector(UIView.setNeedsDisplay))
         displayLink!.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         animationState.currentTime = 0.0
     }
