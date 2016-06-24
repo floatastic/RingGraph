@@ -28,7 +28,7 @@ internal class ProgressTextView: UIView {
         setupSubviews(ringMeter)
     }
     
-    required init(coder aDecoder: NSCoder) { //ugh!
+    required init?(coder aDecoder: NSCoder) { //ugh!
         fatalError("init(coder:) has not been implemented")
     }
     

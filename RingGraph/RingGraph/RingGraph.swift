@@ -15,7 +15,7 @@ public struct RingGraph {
     public init?(meters: [RingMeter]) {
         self.meters = meters
         
-        if (count(meters) == 0) {
+        if (meters.count == 0) {
             return nil
         }
     }
@@ -44,7 +44,7 @@ public struct RingMeter {
         self.title = title
         self.value = value
         self.maxValue = maxValue
-        self.colors = count(colors) > 0 ? colors : [defaultColor]
+        self.colors = colors.count > 0 ? colors : [defaultColor]
         self.symbolProvider = symbolProvider
         
         normalizedValue = value <= maxValue ? Float(value) / Float(maxValue) : 1.0

@@ -23,7 +23,7 @@ internal class RignGraphPainter {
     }
     
     func drawBackground() {
-        for (index, ringMeter) in enumerate(ringGraph.meters) {
+        for (index, ringMeter) in ringGraph.meters.enumerate() {
             
             CGContextSaveGState(context)
             drawBackgroundRing(geometry.radiusForIndex(index), meter: ringMeter)
@@ -32,7 +32,7 @@ internal class RignGraphPainter {
     }
     
     func drawForeground(animationState: RingGraphAnimationState) {
-        for (index, ringMeter) in enumerate(ringGraph.meters) {
+        for (index, ringMeter) in ringGraph.meters.enumerate() {
             let currentValue = CGFloat(animationState.meterValues[index])
             let endAngle = geometry.angleForValue(currentValue)
             let radius = geometry.radiusForIndex(index)
@@ -44,7 +44,7 @@ internal class RignGraphPainter {
                 drawForegroundRing(radius, startAngle: startAngle, endAngle: drawAngle, meter: ringMeter)
             }
             
-            if (count(ringMeter.colors) > 1) {
+            if (ringMeter.colors.count > 1) {
                 CGContextBeginTransparencyLayer(context, nil);
                 drawHalfForegroundRing()
                 drawGradient(drawingRect, meterIndex: index) //TODO this method should take only gradient rect
@@ -73,7 +73,7 @@ private extension RignGraphPainter {
     func drawBackgroundRing(radius: CGFloat, meter: RingMeter) {
         let color = meter.backgroundColor.CGColor
         CGContextSetLineWidth(context, geometry.ringWidth)
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetStrokeColorWithColor(context, color)
         CGContextAddArc(context, geometry.centerPoint.x, geometry.centerPoint.y, radius, 0, fullCircleRadians, 0)
         CGContextStrokePath(context)
@@ -83,7 +83,7 @@ private extension RignGraphPainter {
         let color = meter.colors.last!.CGColor
         CGContextSetStrokeColorWithColor(context, color)
         CGContextSetLineWidth(context, geometry.ringWidth)
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextAddArc(context, geometry.centerPoint.x, geometry.centerPoint.y, radius, startAngle, endAngle, 0)
         CGContextStrokePath(context)
     }
@@ -91,7 +91,7 @@ private extension RignGraphPainter {
     func drawGradient(fullRect: CGRect, meterIndex: Int) {
         let colors = ringGraph.meters[meterIndex].colors
         
-        CGContextSetBlendMode(context, kCGBlendModeSourceIn)
+        CGContextSetBlendMode(context, CGBlendMode.SourceIn)
         
         let num_locations :size_t = 2;
         let meterMultiplier = CGFloat(meterIndex + 1)
@@ -105,7 +105,7 @@ private extension RignGraphPainter {
         let midCenter = CGPoint(x: CGRectGetMidX(drawingRect), y: CGRectGetMaxY(drawingRect))
         
         CGContextClipToRect(context, self.rightGradientClipRect(fullRect))
-        CGContextDrawLinearGradient(context, glossGradient, topCenter, midCenter, 0)
+        CGContextDrawLinearGradient(context, glossGradient, topCenter, midCenter, [])
     }
     
     func rightGradientClipRect(drawRect: CGRect) -> CGRect {

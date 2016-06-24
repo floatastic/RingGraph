@@ -23,12 +23,12 @@ public class RingGraphView: UIView {
         self.addSubview(foregroundView)
     }
 
-    required public init(coder aDecoder: NSCoder) { //ugh!
+    required public init?(coder aDecoder: NSCoder) { //ugh!
         fatalError("init(coder:) has not been implemented")
     }
     
     override public func drawRect(rect: CGRect) {
-        let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext())
+        let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext()!)
         painter.drawBackground()
     }
     

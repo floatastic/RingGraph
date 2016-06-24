@@ -43,7 +43,7 @@ internal class ForegroundView: UIView {
         
     }
     
-    required init(coder aDecoder: NSCoder) { //ugh!
+    required init?(coder aDecoder: NSCoder) { //ugh!
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -60,7 +60,7 @@ internal class ForegroundView: UIView {
         
         let ringAnimationState = RingGraphAnimationState(graph: graph, animationProgress: animationProgress)
         
-        let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext())
+        let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext()!)
         painter.drawForeground(ringAnimationState)
         
         for label in ringDescriptionLabels {
@@ -102,7 +102,7 @@ private extension ForegroundView {
     private func addRingDescriptionLabels() {
         let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        for (index, labelFrame) in enumerate(geometry.framesForDescriptionLabels()) {
+        for (index, labelFrame) in geometry.framesForDescriptionLabels().enumerate() {
             let meter = graph.meters[index]
             let label = FadeOutLabel(frame: labelFrame)
             label.text = meter.title.uppercaseString
@@ -117,7 +117,7 @@ private extension ForegroundView {
     private func addRingSymbols() {
         let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        for (index, frame) in enumerate(geometry.framesForRingSymbols()) {
+        for (index, frame) in geometry.framesForRingSymbols().enumerate() {
             let meter = graph.meters[index]
             let symbolView = SymbolView(frame: frame, symbolProvider: meter.symbolProvider)
             addSubview(symbolView)

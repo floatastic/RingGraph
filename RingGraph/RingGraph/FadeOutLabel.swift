@@ -19,7 +19,7 @@ class FadeOutLabel: UILabel {
         super.init(frame: frame)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -46,11 +46,11 @@ private extension FadeOutLabel {
                 lastFadeCharacterIndex = 0
                 lastFadeCharacterAlpha = 1.0
             case 1.0:
-                lastFadeCharacterIndex = originalText != nil ? count(originalText!) - 1 : 0
+                lastFadeCharacterIndex = originalText != nil ? (originalText!).characters.count - 1 : 0
                 lastFadeCharacterAlpha = 0.0
             default:
                 let intProgress = Int(normalizedProgress * 100)
-                let lettersCount = (originalText != nil) ? count(originalText!) : 1
+                let lettersCount = (originalText != nil) ? (originalText!).characters.count : 1
                 let letterSpan = 100 / lettersCount
                 lastFadeCharacterIndex = intProgress / letterSpan
                 lastFadeCharacterAlpha = 1 - Float(intProgress % letterSpan) / Float(letterSpan)
@@ -59,7 +59,7 @@ private extension FadeOutLabel {
     
     func updateDisplayedText() {
         if let text = self.shiftedText() {
-            if (count(text) == 0) {
+            if (text.characters.count == 0) {
                 super.text = text
             } else {
                 let color = self.textColor.colorWithAlphaComponent(CGFloat(lastFadeCharacterAlpha))
@@ -78,7 +78,7 @@ private extension FadeOutLabel {
         var shiftedText: String?
         
         if let originalText = originalText {
-            let index = advance(originalText.startIndex, lastFadeCharacterIndex)
+            let index = originalText.startIndex.advancedBy(lastFadeCharacterIndex)
             shiftedText = originalText.substringFromIndex(index)
         }
         

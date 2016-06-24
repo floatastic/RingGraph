@@ -38,7 +38,7 @@ internal struct Geometry {
     func framesForDescriptionLabels() -> [CGRect] {
         var frames = [CGRect]()
         
-        for (index, ringMeter) in enumerate(ringGraph.meters) {
+        for (index, ringMeter) in ringGraph.meters.enumerate() {
             let radius = radiusForIndex(index)
             let origin = CGPoint(x: centerPoint.x - maxRadius, y: centerPoint.y - radius - ringWidth / 2.0)
             let size = CGSize(width: maxRadius - ringWidth / 1.5, height: ringWidth)
@@ -60,7 +60,7 @@ internal struct Geometry {
     func framesForRingSymbols() -> [CGRect] {
         var frames = [CGRect]()
         
-        for (index, ringMeter) in enumerate(ringGraph.meters) {
+        for (index, ringMeter) in ringGraph.meters.enumerate() {
             let radius = radiusForIndex(index)
             let width = ringWidth * 0.6
             let origin = CGPoint(x: centerPoint.x - width / 2.0, y: centerPoint.y - radius - width / 2.0)

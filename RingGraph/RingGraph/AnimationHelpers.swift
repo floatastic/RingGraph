@@ -39,7 +39,7 @@ internal struct RangeAnimationHelper {
         self.animationEnd = animationEnd
     }
     
-    func normalizedProgress(#absoluteProgress: Float) -> Float {
+    func normalizedProgress(absoluteProgress absoluteProgress: Float) -> Float {
         var normalizedProgress: Float = 0.0
         
         switch absoluteProgress {

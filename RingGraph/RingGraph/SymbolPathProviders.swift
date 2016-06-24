@@ -24,8 +24,8 @@ public class DefaultPathProvider {
     func defaultPath() -> UIBezierPath {
         let path = UIBezierPath()
         
-        path.lineCapStyle = kCGLineCapRound
-        path.lineJoinStyle = kCGLineJoinRound
+        path.lineCapStyle = CGLineCap.Round
+        path.lineJoinStyle = CGLineJoin.Round
         path.lineWidth = 3
         
         return path
@@ -81,10 +81,10 @@ public class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
     
 }
 
-public class UpArrowPathProvider : RightArrowPathProvider, SymbolPathProvider {
+public class UpArrowPathProvider : RightArrowPathProvider {
     
     override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
-        var path = super.path(inRect: rect, forAnimationProgress: animationProgress)
+        let path = super.path(inRect: rect, forAnimationProgress: animationProgress)
         
         let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
         let radians = CGFloat(-90 * M_PI / 180)
@@ -155,7 +155,7 @@ public class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvi
         path.moveToPoint(points[0])
         path.addLineToPoint(points[3])
         
-        if (count(points) > 4) {
+        if (points.count > 4) {
             path.moveToPoint(points[4])
             path.addLineToPoint(points[5])
             path.moveToPoint(points[4])
