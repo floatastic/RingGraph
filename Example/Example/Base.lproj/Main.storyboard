@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RingGraph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-uS-lVh">
-                                <rect key="frame" x="527" y="562" width="57" height="30"/>
+                                <rect key="frame" x="523" y="544" width="57" height="48"/>
                                 <state key="normal" title="Animate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,16 +28,54 @@
                                     <action selector="animateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLe-V2-chO"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AXX-Th-50S">
+                                <rect key="frame" x="20" y="28" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Triple"/>
+                                    <segment title="Single"/>
+                                    <segment title="Color"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="cCX-6d-Ey2"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-e2-Nyx">
+                                <rect key="frame" x="64" y="64" width="472" height="472"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FJb-e2-Nyx" secondAttribute="height" multiplier="1:1" id="bUh-hs-Lzt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0oE-uS-lVh" secondAttribute="bottom" constant="8" id="UiI-qz-fWS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0oE-uS-lVh" secondAttribute="bottom" constant="8" symbolic="YES" id="1OX-MA-azU"/>
+                            <constraint firstItem="FJb-e2-Nyx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6OJ-Ya-MCo"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="FJb-e2-Nyx" secondAttribute="trailing" id="DOw-fM-Ood"/>
+                            <constraint firstItem="FJb-e2-Nyx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ib8-Wb-tl7"/>
+                            <constraint firstItem="FJb-e2-Nyx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AXX-Th-50S" secondAttribute="bottom" constant="8" symbolic="YES" id="LQ1-f6-q44"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="AXX-Th-50S" secondAttribute="leading" id="LhJ-3T-cUD"/>
+                            <constraint firstItem="0oE-uS-lVh" firstAttribute="top" secondItem="FJb-e2-Nyx" secondAttribute="bottom" constant="8" symbolic="YES" id="RYc-8D-c0u"/>
+                            <constraint firstItem="FJb-e2-Nyx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Tue-v6-EJ1"/>
                             <constraint firstItem="0oE-uS-lVh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VRD-Kz-rtw"/>
+                            <constraint firstItem="AXX-Th-50S" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="cGI-bW-O4h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AXX-Th-50S" secondAttribute="trailing" id="gUP-YG-hGv"/>
+                            <constraint firstItem="AXX-Th-50S" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="v8g-1K-tul"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="v8g-1K-tul"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="ringGraphMetersView" destination="FJb-e2-Nyx" id="Yod-mN-vAG"/>
+                        <outlet property="segmentedControl" destination="AXX-Th-50S" id="Mhi-FP-geZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="415"/>
         </scene>
     </scenes>
 </document>
