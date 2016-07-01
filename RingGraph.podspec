@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'RingGraph'
-    s.version = '0.2.4'
+    s.version = '0.3.0'
     s.license = 'MIT'
     s.summary = 'Circular graph for attractive data presentation. Similar to AppleWatch fitness graphs.'
     s.homepage = 'https://github.com/yomajkel/RingGraph'
