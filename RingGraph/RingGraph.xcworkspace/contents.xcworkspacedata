@@ -7,4 +7,7 @@
    <FileRef
       location = "container:RingGraph.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../RingGraph.podspec">
+   </FileRef>
 </Workspace>
