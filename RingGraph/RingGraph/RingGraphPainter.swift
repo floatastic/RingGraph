@@ -98,14 +98,14 @@ private extension RignGraphPainter {
         let locations: [CGFloat] = [0.12 * meterMultiplier, 1 - 0.12 * meterMultiplier]
         let components: [CGFloat] = UIColor.gradientValuesFromColors(colors)
         
-        let rgbColorspace = CGColorSpaceCreateDeviceRGB()
-        let glossGradient = CGGradientCreateWithColorComponents(rgbColorspace, components, locations, num_locations)
+        if let glossGradient = CGGradientCreateWithColorComponents(CGColorSpaceCreateDeviceRGB(), components, locations, num_locations) {
         
-        let topCenter = CGPoint(x: CGRectGetMidX(drawingRect), y: 0.0)
-        let midCenter = CGPoint(x: CGRectGetMidX(drawingRect), y: CGRectGetMaxY(drawingRect))
-        
-        CGContextClipToRect(context, self.rightGradientClipRect(fullRect))
-        CGContextDrawLinearGradient(context, glossGradient, topCenter, midCenter, [])
+            let topCenter = CGPoint(x: CGRectGetMidX(drawingRect), y: 0.0)
+            let midCenter = CGPoint(x: CGRectGetMidX(drawingRect), y: CGRectGetMaxY(drawingRect))
+            
+            CGContextClipToRect(context, self.rightGradientClipRect(fullRect))
+            CGContextDrawLinearGradient(context, glossGradient, topCenter, midCenter, [])
+        }
     }
     
     func rightGradientClipRect(drawRect: CGRect) -> CGRect {

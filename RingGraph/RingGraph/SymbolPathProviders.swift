@@ -92,8 +92,10 @@ public class ImageProvider : DefaultPathProvider, SymbolPathProvider {
             UIGraphicsEndImageContext()
             
             // Fill with Resized Image
-             UIColor(patternImage: resizedImage).setFill()
-            
+            if let resizedImage = resizedImage {
+                UIColor(patternImage: resizedImage).setFill()
+            }
+        
         } else {
             // Fill Transparent
             kTransparent.setFill()
