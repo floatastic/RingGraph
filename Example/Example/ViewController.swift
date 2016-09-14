@@ -3,7 +3,7 @@
 //  Example
 //
 //  Created by Kreft, Michal on 07.06.15.
-//  Updated by sebastien REMY on 06.28.16.
+//  Updated by Sebastien REMY on 06.2016, 09.2016
 //  Copyright (c) 2015 yomajkel. All rights reserved.
 //
 
@@ -40,12 +40,13 @@ class ViewController: UIViewController {
         ringGraphMetersView.subviews.forEach({$0.removeFromSuperview()})
         graphViews = []
         
+        
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             // Triple Graph Meters
             let tripleGraphMeters = [RingMeter(title: "Move", value: 100, maxValue: 100, colors: [AppleBlue1, AppleBlue2], symbolProvider: RightArrowPathProvider()),
                                      RingMeter(title: "Exercise", value: 72, maxValue: 100, colors: [AppleGreen1, AppleGreen2], symbolProvider: DoubleRightArrowPathProvider()),
-                                     RingMeter(title: "Stand", value: 45, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: UpArrowPathProvider())]
+                                     RingMeter(title: "Stand", value: 45, maxValue: 100, colors: [AppleRed1, AppleRed2], symbolProvider: ImageProvider(image: UIImage(named: "QuestionMark")))]
             
             if let graph = RingGraph(meters: tripleGraphMeters) {
                 let viewFrame = ringGraphMetersView.frame

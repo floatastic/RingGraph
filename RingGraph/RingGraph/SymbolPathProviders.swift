@@ -4,6 +4,7 @@
 //
 //  Created by Kreft, Michal on 18.04.15.
 //  Copyright (c) 2015 Michał Kreft. All rights reserved.
+//  ImageProvider (c) Sebastien REMY (@iLandes on github) on 09.2016
 //
 
 import UIKit
@@ -37,6 +38,70 @@ public class DefaultPathProvider {
     
     func normalizedProgress(progress :Float) -> CGFloat {
         return CGFloat(animationHelper.normalizedProgress(absoluteProgress: progress))
+    }
+}
+
+
+public class ImageProvider : DefaultPathProvider, SymbolPathProvider {
+    // Class Added by Sebastien REMY (@iLandes on github) on Sept' 2016
+    
+    private var image: UIImage?
+    private let kTransparent =  UIColor(white: 1, alpha: 0)
+    
+    public init(image: UIImage?) {
+        self.image = image
+        super.init()
+    }
+    
+    override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
+        let progress = normalizedProgress(animationProgress)
+        
+        if (progress == 0.0) {
+            return super.path(inRect: rect, forAnimationProgress: animationProgress)
+        }
+        
+        let path = UIBezierPath()
+        
+        
+        // Draw a Rect path
+        var points = [CGPoint]()
+        let w = CGFloat(Int(CGRectGetMinX(rect)+CGRectGetMaxX(rect)))  // Use integer value (image size is non decimal)
+        let h = CGFloat(Int(CGRectGetMinY(rect)+CGRectGetMaxY(rect)))  // Use integer value (image size is non decimal)
+        let r = CGRect(x: 0, y: 0, width: w, height: h)
+        
+        points.append(CGPoint(x: 0, y: 0))
+        points.append(CGPoint(x: w, y: 0))
+        points.append(CGPoint(x: w, y: h))
+        points.append(CGPoint(x: 0, y: h))
+        
+        path.lineWidth = 0
+        path.moveToPoint(points[0])
+        path.addLineToPoint(points[1])
+        path.addLineToPoint(points[2])
+        path.addLineToPoint(points[3])
+        path.closePath()
+        
+        
+        // Fill path
+        if let i = image {
+
+            // Resizing Image
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(w, h), false, 1)
+            i.drawInRect(r)
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            // Fill with Resized Image
+             UIColor(patternImage: resizedImage).setFill()
+            
+        } else {
+            // Fill Transparent
+            kTransparent.setFill()
+        }
+        
+        path.fill()
+        
+        return path
     }
 }
 
