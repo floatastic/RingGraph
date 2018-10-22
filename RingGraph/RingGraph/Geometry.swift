@@ -8,9 +8,9 @@
 
 import UIKit
 
-internal let fullCircleRadians = 2.0 * CGFloat(M_PI)
+internal let fullCircleRadians = 2.0 * CGFloat(Double.pi)
 internal let startAngle = -0.25 * fullCircleRadians
-internal let halfRingAngle = startAngle + CGFloat(M_PI)
+internal let halfRingAngle = startAngle + CGFloat(Double.pi)
 internal let shadowEndingAngle = startAngle + fullCircleRadians * 0.93
 
 private let diameterToRingWidthFactor = CGFloat(0.11)
@@ -38,7 +38,7 @@ internal struct Geometry {
     func framesForDescriptionLabels() -> [CGRect] {
         var frames = [CGRect]()
         
-        for (index, _) in ringGraph.meters.enumerate() {
+        for (index, _) in ringGraph.meters.enumerated() {
             let radius = radiusForIndex(index)
             let origin = CGPoint(x: centerPoint.x - maxRadius, y: centerPoint.y - radius - ringWidth / 2.0)
             let size = CGSize(width: maxRadius - ringWidth / 1.5, height: ringWidth)
@@ -60,7 +60,7 @@ internal struct Geometry {
     func framesForRingSymbols() -> [CGRect] {
         var frames = [CGRect]()
         
-        for (index, _) in ringGraph.meters.enumerate() {
+        for (index, _) in ringGraph.meters.enumerated() {
             let radius = radiusForIndex(index)
             let width = ringWidth * 0.6
             let origin = CGPoint(x: centerPoint.x - width / 2.0, y: centerPoint.y - radius - width / 2.0)
@@ -71,11 +71,11 @@ internal struct Geometry {
         return frames
     }
     
-    func radiusForIndex(index: Int) -> CGFloat {
+    func radiusForIndex(_ index: Int) -> CGFloat {
         return maxRadius - CGFloat(ringWidth + 1) * CGFloat(index)
     }
     
-    func angleForValue(value: CGFloat) -> CGFloat {
+    func angleForValue(_ value: CGFloat) -> CGFloat {
         return (value > 0.0 ? value : minDrawableValue) * fullCircleRadians + startAngle
     }
 }

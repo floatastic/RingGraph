@@ -38,19 +38,19 @@ class FadeOutLabel: UILabel {
 
 private extension FadeOutLabel {
     
-    func updateStateForProgress(let progress: Float) {
-        let normalizedProgress = animationHelper.normalizedProgress(absoluteProgress: progress)
+    func updateStateForProgress(_ progress: Float) {
+        let normalizedProgress = animationHelper.normalizedProgress(progress)
         
         switch normalizedProgress {
             case 0.0:
                 lastFadeCharacterIndex = 0
                 lastFadeCharacterAlpha = 1.0
             case 1.0:
-                lastFadeCharacterIndex = originalText != nil ? (originalText!).characters.count - 1 : 0
+                lastFadeCharacterIndex = originalText != nil ? (originalText!).count - 1 : 0
                 lastFadeCharacterAlpha = 0.0
             default:
                 let intProgress = Int(normalizedProgress * 100)
-                let lettersCount = (originalText != nil) ? (originalText!).characters.count : 1
+                let lettersCount = (originalText != nil) ? (originalText!).count : 1
                 let letterSpan = 100 / lettersCount
                 lastFadeCharacterIndex = intProgress / letterSpan
                 lastFadeCharacterAlpha = 1 - Float(intProgress % letterSpan) / Float(letterSpan)
@@ -59,13 +59,13 @@ private extension FadeOutLabel {
     
     func updateDisplayedText() {
         if let text = self.shiftedText() {
-            if (text.characters.count == 0) {
+            if (text.count == 0) {
                 super.text = text
             } else {
-                let color = self.textColor.colorWithAlphaComponent(CGFloat(lastFadeCharacterAlpha))
+                let color = self.textColor.withAlphaComponent(CGFloat(lastFadeCharacterAlpha))
                 let range = NSRange(location: 0, length: 1)
                 let attributedString = NSMutableAttributedString(string: text)
-                attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
+                attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
                 self.attributedText = attributedString
             }
         } else {
@@ -77,8 +77,9 @@ private extension FadeOutLabel {
         var shiftedText: String?
         
         if let originalText = originalText {
-            let index = originalText.startIndex.advancedBy(lastFadeCharacterIndex)
-            shiftedText = originalText.substringFromIndex(index)
+            //let index = originalText.startIndex.advanced(lastFadeCharacterIndex)
+            let index = originalText.index(originalText.startIndex, offsetBy: lastFadeCharacterIndex)
+            shiftedText = originalText.substring(from: index)
         }
         
         return shiftedText

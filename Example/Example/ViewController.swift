@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             
         case 2:
             // Color Graph Meters
-            let color = UIColor.yellowColor()
+            let color = UIColor.yellow
             let singleColorGraphMeters = [RingMeter(title: "Move", value: 68, maxValue: 100, colors: [color]),
                                           RingMeter(title: "Exercise", value: 63, maxValue: 100, colors: [color]),
                                           RingMeter(title: "Stand", value: 40, maxValue: 100, colors: [color])]

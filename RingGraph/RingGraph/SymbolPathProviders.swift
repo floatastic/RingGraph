@@ -25,8 +25,8 @@ public class DefaultPathProvider {
     func defaultPath() -> UIBezierPath {
         let path = UIBezierPath()
         
-        path.lineCapStyle = CGLineCap.Round
-        path.lineJoinStyle = CGLineJoin.Round
+        path.lineCapStyle = CGLineCap.round
+        path.lineJoinStyle = CGLineJoin.round
         path.lineWidth = 3
         
         return path
@@ -36,8 +36,8 @@ public class DefaultPathProvider {
         return UIBezierPath()
     }
     
-    func normalizedProgress(progress :Float) -> CGFloat {
-        return CGFloat(animationHelper.normalizedProgress(absoluteProgress: progress))
+    func normalizedProgress(_ progress :Float) -> CGFloat {
+        return CGFloat(animationHelper.normalizedProgress(progress))
     }
 }
 
@@ -65,8 +65,8 @@ public class ImageProvider : DefaultPathProvider, SymbolPathProvider {
         
         // Draw a Rect path
         var points = [CGPoint]()
-        let w = CGFloat(Int(CGRectGetMinX(rect)+CGRectGetMaxX(rect)))  // Use integer value (image size is non decimal)
-        let h = CGFloat(Int(CGRectGetMinY(rect)+CGRectGetMaxY(rect)))  // Use integer value (image size is non decimal)
+        let w = rect.minX + rect.maxX
+        let h = rect.minY + rect.maxY
         let r = CGRect(x: 0, y: 0, width: w, height: h)
         
         points.append(CGPoint(x: 0, y: 0))
@@ -75,19 +75,19 @@ public class ImageProvider : DefaultPathProvider, SymbolPathProvider {
         points.append(CGPoint(x: 0, y: h))
         
         path.lineWidth = 0
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[1])
-        path.addLineToPoint(points[2])
-        path.addLineToPoint(points[3])
-        path.closePath()
+        path.move(to: points[0])
+        path.addLine(to: points[1])
+        path.addLine(to: points[2])
+        path.addLine(to: points[3])
+        path.close()
         
         
         // Fill path
         if let i = image {
 
             // Resizing Image
-            UIGraphicsBeginImageContextWithOptions(CGSizeMake(w, h), false, 1)
-            i.drawInRect(r)
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: w, height: h), false, 1)
+            i.draw(in: r)
             let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
@@ -118,30 +118,30 @@ public class RightArrowPathProvider : DefaultPathProvider, SymbolPathProvider {
         
         var points = [CGPoint]()
         
-        let middleEndPoint = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect))
+        let middleEndPoint = CGPoint(x: rect.maxX, y: rect.midY)
         
         var intermediatePoint1 = middleEndPoint
         intermediatePoint1.x = middleEndPoint.x * progress
         
         var intermediatePoint2 = middleEndPoint
-        intermediatePoint2.x = CGRectGetMidX(rect) + middleEndPoint.x * progress / 2
+        intermediatePoint2.x = rect.midX + middleEndPoint.x * progress / 2
         
         points.append(intermediatePoint1)
-        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
+        points.append(CGPoint(x: rect.minX, y: rect.midY))
         
         points.append(intermediatePoint2)
-        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
-        points.append(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
+        points.append(CGPoint(x: rect.midX, y: rect.minY))
+        points.append(CGPoint(x: rect.midX, y: rect.maxY))
         
         let path = defaultPath()
         
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[1])
-        path.moveToPoint(points[2])
-        path.addLineToPoint(points[3])
-        path.moveToPoint(points[2])
-        path.addLineToPoint(points[4])
-        path.closePath()
+        path.move(to: points[0])
+        path.addLine(to: points[1])
+        path.move(to: points[2])
+        path.addLine(to: points[3])
+        path.move(to: points[2])
+        path.addLine(to: points[4])
+        path.close()
         
         return path
     }
@@ -153,15 +153,15 @@ public class UpArrowPathProvider : RightArrowPathProvider {
     override public func path(inRect rect: CGRect, forAnimationProgress animationProgress: Float) -> UIBezierPath {
         let path = super.path(inRect: rect, forAnimationProgress: animationProgress)
         
-        let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
-        let radians = CGFloat(-90 * M_PI / 180)
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        let radians = CGFloat(-90 * Double.pi / 180)
         
-        var transform = CGAffineTransformIdentity
-        transform = CGAffineTransformTranslate(transform, center.x, center.y)
-        transform = CGAffineTransformRotate(transform, radians)
-        transform = CGAffineTransformTranslate(transform, -center.x, -center.y)
+        var transform = CGAffineTransform.identity
+        transform = transform.translatedBy(x: center.x, y: center.y)
+        transform = transform.rotated(by: radians)
+        transform = transform.translatedBy(x: -center.x, y: -center.y)
         
-        path.applyTransform(transform)
+        path.apply(transform)
         
         return path
     }
@@ -183,21 +183,21 @@ public class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvi
             return super.path(inRect: rect, forAnimationProgress: animationProgress)
         }
         
-        let leftProgress = CGFloat(leftAnimationHelper.normalizedProgress(absoluteProgress: animationProgress))
-        let rightProgress = CGFloat(rightAnimationHelper.normalizedProgress(absoluteProgress: animationProgress))
+        let leftProgress = CGFloat(leftAnimationHelper.normalizedProgress(animationProgress))
+        let rightProgress = CGFloat(rightAnimationHelper.normalizedProgress(animationProgress))
         
         var points = [CGPoint]()
         
-        let middleEndPoint = CGPoint(x: CGRectGetMaxX(rect) - arrowSpacing, y: CGRectGetMidY(rect))
-        let rightEndPoint = CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect))
+        let middleEndPoint = CGPoint(x: rect.maxX - arrowSpacing, y: rect.midY)
+        let rightEndPoint = CGPoint(x: rect.maxX, y: rect.midY)
         
         var intermediatePoint1 = middleEndPoint
         intermediatePoint1.x = middleEndPoint.x * leftProgress
         
         points.append(intermediatePoint1)
-        points.append(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
-        points.append(CGPoint(x: CGRectGetMidX(rect) - arrowSpacing, y: CGRectGetMinY(rect)))
-        points.append(CGPoint(x: CGRectGetMidX(rect) - arrowSpacing, y: CGRectGetMaxY(rect)))
+        points.append(CGPoint(x: rect.minX, y: rect.midY))
+        points.append(CGPoint(x: rect.midX - arrowSpacing, y: rect.minY))
+        points.append(CGPoint(x: rect.midX - arrowSpacing, y: rect.maxY))
         
         if (rightProgress > 0) {
             let delta = arrowSpacing * (1 - rightProgress)
@@ -205,31 +205,31 @@ public class DoubleRightArrowPathProvider : DefaultPathProvider, SymbolPathProvi
             intermediateEndPoint2.x -= delta
             
             points.append(intermediateEndPoint2)
-            points.append(CGPoint(x: CGRectGetMidX(rect) - delta, y: CGRectGetMinY(rect)))
-            points.append(CGPoint(x: CGRectGetMidX(rect) - delta, y: CGRectGetMaxY(rect)))
+            points.append(CGPoint(x: rect.midX - delta, y: rect.minY))
+            points.append(CGPoint(x: rect.midX - delta, y: rect.maxY))
         }
         
-        return pathFromPoints(points)
+        return path(from: points)
     }
     
-    func pathFromPoints(points :[CGPoint]) -> UIBezierPath {
+    func path(from points :[CGPoint]) -> UIBezierPath {
         let path = defaultPath()
         
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[1])
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[2])
-        path.moveToPoint(points[0])
-        path.addLineToPoint(points[3])
+        path.move(to: points[0])
+        path.addLine(to: points[1])
+        path.move(to: points[0])
+        path.addLine(to: points[2])
+        path.move(to: points[0])
+        path.addLine(to: points[3])
         
         if (points.count > 4) {
-            path.moveToPoint(points[4])
-            path.addLineToPoint(points[5])
-            path.moveToPoint(points[4])
-            path.addLineToPoint(points[6])
+            path.move(to: points[4])
+            path.addLine(to: points[5])
+            path.move(to: points[4])
+            path.addLine(to: points[6])
         }
         
-        path.closePath()
+        path.close()
         
         return path
     }

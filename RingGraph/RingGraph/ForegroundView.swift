@@ -29,7 +29,7 @@ internal class ForegroundView: UIView {
         animationState = AnimationState(totalDuration: 1.3, progress: 1.0)
         
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         switch descriptionPreset {
         case .CentralDescription:
@@ -47,9 +47,9 @@ internal class ForegroundView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         if isAnimating() {
-            animationState.incrementDuration(displayLink!.duration)
+            animationState.incrementDuration(delta: displayLink!.duration)
         }
         
         let animationProgress = animationState.progress()
@@ -61,10 +61,10 @@ internal class ForegroundView: UIView {
         let ringAnimationState = RingGraphAnimationState(graph: graph, animationProgress: animationProgress)
         
         let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext()!)
-        painter.drawForeground(ringAnimationState)
+        painter.drawForeground(animationState: ringAnimationState)
         
         for label in ringDescriptionLabels {
-            label.setAnimationProgress(animationProgress)
+            label.setAnimationProgress(progress: animationProgress)
         }
         
         for symbolView in symbolViews {
@@ -72,7 +72,7 @@ internal class ForegroundView: UIView {
         }
         
         if let progressTextView = self.progressTextView {
-            progressTextView.setAnimationProgress(animationProgress)
+            progressTextView.setAnimationProgress(progress: animationProgress)
         }
     }
     
@@ -81,8 +81,8 @@ internal class ForegroundView: UIView {
             endAnimation()
         }
         
-        displayLink = CADisplayLink(target: self, selector: #selector(UIView.setNeedsDisplay))
-        displayLink!.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        displayLink = CADisplayLink(target: self, selector: #selector(setNeedsDisplay as () -> Void))
+        displayLink!.add(to: RunLoop.main, forMode: RunLoop.Mode.default)
         animationState.currentTime = 0.0
     }
 }
@@ -102,12 +102,12 @@ private extension ForegroundView {
     private func addRingDescriptionLabels() {
         let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        for (index, labelFrame) in geometry.framesForDescriptionLabels().enumerate() {
+        for (index, labelFrame) in geometry.framesForDescriptionLabels().enumerated() {
             let meter = graph.meters[index]
             let label = FadeOutLabel(frame: labelFrame)
-            label.text = meter.title.uppercaseString
-            label.textAlignment = .Right
-            label.font = UIFont.boldSystemFontOfSize(20.0)
+            label.text = meter.title.uppercased()
+            label.textAlignment = .right
+            label.font = UIFont.boldSystemFont(ofSize: 20.0)
             label.textColor = meter.descriptionLabelColor
             self.addSubview(label)
             ringDescriptionLabels.append(label)
@@ -117,7 +117,7 @@ private extension ForegroundView {
     private func addRingSymbols() {
         let geometry = Geometry(ringGraph: graph, drawingSize: frame.size)
         
-        for (index, frame) in geometry.framesForRingSymbols().enumerate() {
+        for (index, frame) in geometry.framesForRingSymbols().enumerated() {
             let meter = graph.meters[index]
             let symbolView = SymbolView(frame: frame, symbolProvider: meter.symbolProvider)
             addSubview(symbolView)

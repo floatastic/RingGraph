@@ -12,11 +12,11 @@ class SymbolView: UIView {
     let animationHelper: RangeAnimationHelper = RangeAnimationHelper(animationStart: 0.3, animationEnd: 0.5)
     let margin: CGFloat = 2
     let symbolProvider: SymbolPathProvider
-    let color = UIColor.blackColor().CGColor
+    let color = UIColor.black.cgColor
     
     var animationProgress :Float = 1.0 {
         didSet {
-            alpha = CGFloat(animationHelper.normalizedProgress(absoluteProgress: animationProgress))
+            alpha = CGFloat(animationHelper.normalizedProgress(animationProgress))
             setNeedsDisplay()
         }
     }
@@ -26,15 +26,15 @@ class SymbolView: UIView {
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) { //ugh!
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func drawRect(rect: CGRect) {
-        let path = symbolProvider.path(inRect: rectWithMargins(rect), forAnimationProgress: animationProgress)
+    override func draw(_ rect: CGRect) {
+        let path = symbolProvider.path(inRect: rectWithMargins(originalRect: rect), forAnimationProgress: animationProgress)
         let _ = UIGraphicsGetCurrentContext()
         
         path.stroke()

@@ -28,22 +28,22 @@ class RingGraphViewPerformanceTests: XCTestCase {
         let graph = RingGraph(meters: tripleGraphMeters)
         let ringGraphView = RingGraphView(frame: helper.defaultFrame(), graph: graph!, preset: .MetersDescription)
         
-        pushContext(ringGraphView)
+        pushContext(forView: ringGraphView)
         
-        self.measureBlock() {
-            ringGraphView.drawRect(ringGraphView.bounds)
+        self.measure() {
+            ringGraphView.draw(ringGraphView.bounds)
         }
     }
     
     private func pushContext(forView :UIView) {
-        let scaleFactor = UIScreen.mainScreen().scale
+        let scaleFactor = UIScreen.main.scale
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
         let bounds = forView.bounds
         let width = Int(bounds.size.width * scaleFactor)
         let height = Int(bounds.size.height * scaleFactor)
         
-        let context = CGBitmapContextCreate(nil, width, height, 8, width * 4, colorSpace, bitmapInfo.rawValue)!
+        let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: width * 4, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
         UIGraphicsPushContext(context)
     }
     

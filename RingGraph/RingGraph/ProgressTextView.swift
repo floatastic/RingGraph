@@ -25,7 +25,7 @@ internal class ProgressTextView: UIView {
         slideAnimationHelper = RangeAnimationHelper(animationStart: 0.4, animationEnd: 0.7)
         
         super.init(frame: frame)
-        setupSubviews(ringMeter)
+        setupSubviews(ringMeter: ringMeter)
     }
     
     required init?(coder aDecoder: NSCoder) { //ugh!
@@ -33,8 +33,8 @@ internal class ProgressTextView: UIView {
     }
     
     func setAnimationProgress(progress: Float) {
-        setFadeAnimationState(progress)
-        setSlideAnimationProgress(progress)
+        setFadeAnimationState(progress: progress)
+        setSlideAnimationProgress(progress: progress)
     }
 }
 
@@ -42,12 +42,12 @@ private extension ProgressTextView {
     
     func setupSubviews(ringMeter: RingMeter) {
         setupSubviewFrames()
-        setupSubviewVisuals(ringMeter)
+        setupSubviewVisuals(ringMeter: ringMeter)
     }
     
     func setupSubviewFrames() {
         var frame = self.frame
-        frame.origin = CGPointZero
+        frame.origin = CGPoint.zero
         frame.size.height *= counterDescriptionRatio
         counterHostView.frame = frame
         
@@ -63,16 +63,16 @@ private extension ProgressTextView {
     }
     
     func setupSubviewVisuals(ringMeter: RingMeter) {
-        counterLabel.font = UIFont.systemFontOfSize(90)
+        counterLabel.font = UIFont.systemFont(ofSize: 90)
         counterLabel.text = String(ringMeter.value)
         
-        descriptionLabel.font = UIFont.systemFontOfSize(28)
-        descriptionLabel.text = "OF \(ringMeter.maxValue) \(ringMeter.title.uppercaseString)" //TODO lozalize
+        descriptionLabel.font = UIFont.systemFont(ofSize: 28)
+        descriptionLabel.text = "OF \(ringMeter.maxValue) \(ringMeter.title.uppercased())" //TODO lozalize
         
-        counterLabel.textAlignment = .Center
-        descriptionLabel.textAlignment = .Center
+        counterLabel.textAlignment = .center
+        descriptionLabel.textAlignment = .center
         
-        let color = UIColor.whiteColor()
+        let color = UIColor.white
         counterLabel.textColor = color
         descriptionLabel.textColor = color
         
@@ -80,11 +80,11 @@ private extension ProgressTextView {
     }
     
     func setFadeAnimationState(progress: Float) {
-        alpha = CGFloat(fadeAnimationHelper.normalizedProgress(absoluteProgress: progress))
+        alpha = CGFloat(fadeAnimationHelper.normalizedProgress(progress))
     }
     
     func setSlideAnimationProgress(progress: Float) {
-        let positionMultiplier = 1.0 - slideAnimationHelper.normalizedProgress(absoluteProgress: progress)
+        let positionMultiplier = 1.0 - slideAnimationHelper.normalizedProgress(progress)
         counterLabel.frame.origin.y = counterHostView.frame.height * CGFloat(positionMultiplier)
     }
 }

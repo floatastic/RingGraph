@@ -27,7 +27,7 @@ public class RingGraphView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func drawRect(rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         let painter = RignGraphPainter(ringGraph: graph, drawingRect: rect, context: UIGraphicsGetCurrentContext()!)
         painter.drawBackground()
     }

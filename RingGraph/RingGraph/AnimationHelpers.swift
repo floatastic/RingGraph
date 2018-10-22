@@ -9,23 +9,23 @@
 import Foundation
 
 internal struct AnimationState {
-    let totalDuration: NSTimeInterval
-    var currentTime: NSTimeInterval = 0.0
+    let totalDuration: TimeInterval
+    var currentTime: TimeInterval = 0.0
     
-    init(totalDuration: NSTimeInterval) {
+    init(totalDuration: TimeInterval) {
         self.totalDuration = totalDuration
     }
     
-    init(totalDuration: NSTimeInterval, progress: Float) {
+    init(totalDuration: TimeInterval, progress: Float) {
         self.totalDuration = totalDuration
-        self.currentTime = totalDuration * NSTimeInterval(progress)
+        self.currentTime = totalDuration * TimeInterval(progress)
     }
     
     func progress() -> Float {
         return currentTime >= totalDuration ? 1.0 : Float(currentTime / totalDuration)
     }
     
-    mutating func incrementDuration(delta: NSTimeInterval) {
+    mutating func incrementDuration(delta: TimeInterval) {
         currentTime += delta
     }
 }
@@ -39,7 +39,7 @@ internal struct RangeAnimationHelper {
         self.animationEnd = animationEnd
     }
     
-    func normalizedProgress(absoluteProgress absoluteProgress: Float) -> Float {
+    func normalizedProgress(_ absoluteProgress: Float) -> Float {
         var normalizedProgress: Float = 0.0
         
         switch absoluteProgress {
@@ -63,16 +63,16 @@ struct RingGraphAnimationState {
     
     init(graph: RingGraph, animationProgress inProgress: Float) {
         animationHelper = RangeAnimationHelper(animationStart: 0.3, animationEnd: 1.0)
-        let graphProgress = sinEaseOutValue(forAnimationProgress: animationHelper.normalizedProgress(absoluteProgress: inProgress))
+        let graphProgress = sinEaseOutValue(forAnimationProgress: animationHelper.normalizedProgress(inProgress))
         animationProgress = graphProgress
         
         let closureProgress = animationProgress
-        meterValues = graph.meters.map {(let meter) -> Float in
+        meterValues = graph.meters.map {meter -> Float in
             return meter.normalizedValue * closureProgress
         }
     }
 }
 
 internal func sinEaseOutValue(forAnimationProgress progress: Float) -> Float {
-    return sin(progress * Float(M_PI) / 2)
+    return sin(progress * Float(Double.pi) / 2)
 }

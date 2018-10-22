@@ -25,7 +25,7 @@ public struct RingGraph {
     }
 }
 
-private let defaultColor = UIColor.lightGrayColor()
+private let defaultColor = UIColor.lightGray
 
 public struct RingMeter {
     let title: String
@@ -53,7 +53,7 @@ public struct RingMeter {
             backgroundColor = self.colors.first!.darker()
             descriptionLabelColor = self.colors.first!
         } else {
-            descriptionLabelColor = self.colors.first!.blend(self.colors.last!)
+            descriptionLabelColor = self.colors.first!.blend(color: self.colors.last!)
             backgroundColor = descriptionLabelColor.darker()
         }
     }
