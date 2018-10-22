@@ -79,7 +79,7 @@ private extension FadeOutLabel {
         if let originalText = originalText {
             //let index = originalText.startIndex.advanced(lastFadeCharacterIndex)
             let index = originalText.index(originalText.startIndex, offsetBy: lastFadeCharacterIndex)
-            shiftedText = originalText.substring(from: index)
+            shiftedText = String(originalText[index...])
         }
         
         return shiftedText
