@@ -1,12 +1,12 @@
-#Ring Graph
+# Ring Graph
 
 Ring Graph is an imitation of ring graph seen on Apple Watch. There is still some work required to make it more like the Apple version, but can already be used as provided.
 
-##Usage
+## Usage
 
 There are three "modes" the graph can be presented in.
 
-###Triple mode
+### Triple mode
 
 ![Triple mode in action](assets/tripleRingAnimation.gif)
 
@@ -20,7 +20,7 @@ if let graph = RingGraph(meters: tripleGraphMeters) {
 }
 ```
 
-###Single mode
+### Single mode
 
 ![Single mode in action](assets/sinlgeRingAnimation.gif)
 
@@ -32,7 +32,7 @@ if let graph = RingGraph(meters: singleGraphMeter) {
 }
 ```
 
-###Mini mode
+### Mini mode
 
 ![Mini mode in action](assets/miniRingAnimation.gif)
 
@@ -46,10 +46,10 @@ if let graph = RingGraph(meters: singleColorGraphMeters) {
 	let ringGraphView = RingGraphView(frame: frame, graph: graph, preset: .None)
 }
 ```
-##Current impediments you should consider
+## Current impediments you should consider
 Aside from all visual improvements that are still needed there are two major functional differences that still need to be fixed.
 * Ring can onbly present max value of 100%. This means it can not go over 360 degrees.
 * Graph can only be animated from 0 to end value. So it is currently impossible to present graph at 50% value and animate it to i.e. 75%.
 
-##License
+## License
 RingGraph is published under the MIT license.
